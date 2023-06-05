@@ -174,7 +174,7 @@ header {
   color: black;
 }
 
-.categories .text{
+.text{
   padding: 25px 26px;
   position: relative;
 }
@@ -533,62 +533,38 @@ header {
     color: rgb(219, 34, 34);
 }
 
-.ingre-dish{
+.top-ingre{
+  display: flex; 
+  flex-direction: column;
+  background-color: #E9EDC9;
+}
+.top-ingre-meals{
   display: flex;
   flex-wrap: wrap;
-  padding: 10px 80px;
-}
-.ingre-list{
-  height: 150px;
-  width: 250px;
-  margin: 5px;
-  background-color: lawngreen;
-}
-
-.ingre-list img{
-  height: 100%;
-  width: 100%;
 }
 
 
-
-
-
-
-@media (max-width: 800px) {
-  header {
-    padding: 0 40px;
-  }
-
-  .headerright a {
-    font-size: 18px;
-  }
-
-  .headerleft h1 {
-    font-size: 18px;
-  }
-
-  .headerleft svg {
-    font-size: 30px;
-  }
+.top-ingre-search{
+  text-align: center;
+  height: 44px;
+  width: 256px;
+  margin: 20px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  color: white;
+  background-color: brown;
+  text-decoration: none;
+  transition: 0.5s ease;
 }
 
+.top-ingre-search svg{
+  margin-left: 5px;
+}
 
-@media (max-width: 400px) {
-  header {
-    padding: 0 20px;
-  }
-
-  .headerright a {
-    font-size: 15px;
-    margin-right: 20px;
-  }
-
-  .headerleft h1 {
-    font-size: 15px;
-  }
-
-  .headerleft svg {
-    font-size: 25px;
-  }
+.top-ingre-search:hover{
+  transform: scale(1.1);
+  background-color:white;
+  color: black;
 }

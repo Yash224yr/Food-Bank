@@ -9,6 +9,7 @@ import Ingrdients from './Ingrdients';
 import Receipe from './Receipe';
 import Random from './Random';
 import Area from './Area';
+import Ingre from './Ingre';
 export const mealcontext = createContext(null)
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
           <Route path='/receipe' element={<Receipe/>}></Route>
           <Route path='/random' element={<Random/>} ></Route>
           <Route path='/area' element={<Area/>}></Route>
+          <Route path='/ingre' element={<Ingre/>} ></Route>
         </Routes>
       </BrowserRouter>
     </mealcontext.Provider>

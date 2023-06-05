@@ -13,8 +13,9 @@ function Header() {
         <h1>Food Bank</h1>
         </div>
         <div className='headerright'>
-            <Link to="/area">Regional Delicacies</Link>
             <Link to="/" >Home</Link>
+            <Link to="/ingre" >Ingredients</Link>
+            <Link to="/area">Regional Delicacies</Link>
         </div>
         <div className='get-random'>
          <button> <Link to="/random" >Random Meal</Link></button>
