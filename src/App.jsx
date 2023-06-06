@@ -18,9 +18,10 @@ function App() {
   const [search , setSearch] = useState("")
   const [description , setdescription] = useState("")
   const [receipe, setReceipe] = useState("")
+  const [filter , setFilter] = useState("")
 
   return (
-    <mealcontext.Provider value={{ select, setSelect, search , setSearch, description, setdescription , receipe, setReceipe}}>
+    <mealcontext.Provider value={{ select, setSelect, search , setSearch, description, setdescription , receipe, setReceipe, filter, setFilter}}>
       <BrowserRouter>
         <Header></Header>
         <Routes>

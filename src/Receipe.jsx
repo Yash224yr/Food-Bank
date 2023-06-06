@@ -7,6 +7,8 @@ function Recipe() {
     const { receipe, setReceipe } = useContext(mealcontext);
     const [detail, setDetail] = useState([]);
 
+    console.log(receipe)
+
     useEffect(() => {
         axios
             .get(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${receipe}`)
