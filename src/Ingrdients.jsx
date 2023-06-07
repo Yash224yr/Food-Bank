@@ -8,7 +8,6 @@ function Ingredients() {
   const { search, setSearch } = useContext(mealcontext);
   const [meal, setMeal] = useState([]);
   const [input, setInput] = useState('');
-  const { receipe, setReceipe } = useContext(mealcontext);
   const [error, setError] = useState('');
 
   useEffect(() => {
@@ -63,7 +62,7 @@ function Ingredients() {
               return (
                 <div className='area-dish' key={index}>
                   <img src={meal.strMealThumb} alt="" />
-                  <Link to='/receipe' onClick={() => getRecipe(meal.idMeal)}>{meal.strMeal}  </Link>
+                  <Link  to={`/receipe/${meal.idMeal}`} onClick={() => getRecipe(meal.idMeal)}>{meal.strMeal}  </Link>
                 </div>
               )
             })

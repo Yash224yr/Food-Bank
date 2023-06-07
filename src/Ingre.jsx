@@ -2,7 +2,6 @@ import React, { useContext, useEffect, useState } from 'react';
 import axios from 'axios';
 import SearchIcon from '@mui/icons-material/Search';
 import { Link } from 'react-router-dom';
-import { mealcontext } from './App';
 
 function Ingre() {
     const [ingre, setIngre] = useState([]);
@@ -10,7 +9,6 @@ function Ingre() {
     const [meal, setMeal] = useState([]);
     const [showCategories, setShowCategories] = useState(true);
     const [error, setError] = useState('');
-    const { receipe, setReceipe } = useContext(mealcontext);
 
 
     useEffect(() => {
@@ -49,10 +47,6 @@ function Ingre() {
             });
     }
 
-    function getRecipe(meal) {
-        setReceipe(meal);
-    }
-
 
     return (
         <div className="search-meal">
@@ -76,7 +70,7 @@ function Ingre() {
                         return (
                             <div className="area-dish" key={index}>
                                 <img src={meal.strMealThumb} alt="" />
-                                <Link to="/receipe" onClick={() => getRecipe(meal.idMeal)}>
+                                <Link  to={`/receipe/${meal.idMeal}`} onClick={() => getRecipe(meal.idMeal)}>
                                     {meal.strMeal}
                                 </Link>
                             </div>

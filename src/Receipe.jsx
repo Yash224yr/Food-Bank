@@ -1,17 +1,16 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { mealcontext } from './App';
 import axios from 'axios';
-
+import { useParams } from 'react-router-dom';
 
 function Recipe() {
-    const { receipe, setReceipe } = useContext(mealcontext);
     const [detail, setDetail] = useState([]);
 
-    console.log(receipe)
+    const { id } = useParams()
+
 
     useEffect(() => {
         axios
-            .get(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${receipe}`)
+            .get(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`)
             .then((result) => {
                 setDetail(result.data.meals);
             })
@@ -20,7 +19,11 @@ function Recipe() {
             });
     }, []);
 
-    console.log(detail);
+    const formatInstructions = (instructions) => {
+        const steps = instructions.split('\r\n');
+        return steps.map((step, index) => <li key={index}>{step}</li>);
+    };
+
 
     return (
         <div className='recipe-list'>
@@ -35,28 +38,32 @@ function Recipe() {
                                 <h1>{meal.strMeal}</h1>
                                 <h3>{meal.strCategory}</h3>
                                 <h3>{meal.strArea} Dish</h3>
-                                <a href={meal.strSource} target='_blank' rel='noopener noreferrer'>
-                                    Meal Source
-                                </a>
+                                {
+                                    meal.strSource ? <a href={meal.strSource} target='_blank' rel='noopener noreferrer'>
+                                        Meal Source
+                                    </a> : ""
+                                }
                                 <a href={meal.strYoutube} target='_blank' rel='noopener noreferrer'>
                                     YouTube
                                 </a>
                             </div>
-                            <div className='ingredients'>
-                                <h2>Ingredients:</h2>
-                                <ul>
-                                    {Object.entries(meal).map(([key, value]) => {
-                                        if (key.includes('Ingredient') && value) {
-                                            return <li key={key}>{value}</li>;
-                                        }
-                                        return null;
-                                    })}
-                                </ul>
-                            </div>
+                        </div>
+                        <div className='ingredients'>
+                            <h2>Ingredients:</h2>
+                            <ul>
+                                {Object.entries(meal).map(([key, value]) => {
+                                    if (key.includes('Ingredient') && value) {
+                                        return <li key={key}>{value},</li>;
+                                    }
+                                    return null;
+                                })}
+                            </ul>
                         </div>
                         <div className='recipe-instruction'>
                             <h2>Instructions:</h2>
-                            <p>{meal.strInstructions}</p>
+                            <ul>
+                                {formatInstructions(meal.strInstructions)}
+                            </ul>
                         </div>
                     </div>
                 );

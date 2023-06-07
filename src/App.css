@@ -38,12 +38,10 @@ header {
   justify-content: center;
   align-items: center;
   cursor: pointer;
-}
-
-.get-random button a{
-  text-decoration: none;
   color: white;
 }
+
+
 
 @keyframes moveUpDown {
   0% {
@@ -206,13 +204,75 @@ header {
   justify-content: center;
   margin-bottom: 20px;
   background-color: #f5f5f5;
-  padding: 20px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   position: relative;
   overflow: hidden;
   transition: 0.5s ease;
+  cursor: pointer;
 }
+
+.category-item .icons h1{
+  color: white;
+  font-size: 30px;
+}
+
+.category-item .icons{
+  position: absolute;
+  top: -150%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  transition: 0.5s ease;
+  z-index: 2;
+}
+
+.category-item:hover .goto{
+  display: none;
+}
+
+.iconlogo{
+  margin-top: 10px;
+}
+
+
+.category-item:hover .icons{
+  top: -10%;
+}
+
+.icons{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.category-item::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.847);
+  padding: 0;
+  z-index: 1;
+  transition: 0.5s ease;
+}
+
+.category-item:hover::before{
+  left: 0;
+}
+
+.icons .iconlogo svg{
+  color: white;
+  z-index: 1;
+  font-size: 40px;
+  margin: 5px;
+}
+
+
 
 .category-item:hover,
 .meal-item:hover {
@@ -242,13 +302,15 @@ header {
 
 
 
+
 .category-item h1 {
-  margin-bottom: 18px;
   font-size: 24px;
   font-weight: bold;
   cursor: pointer;
   color: #333;
+  margin-top: 26px;
   transition: color 0.3s ease;
+  text-align: center;
 }
 
 .category-item h1:hover {
@@ -333,106 +395,82 @@ header {
 .recipe-detail {
   display: flex;
   flex-direction: column;
-  align-items: center;
   margin-bottom: 30px;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
   background-color: #ffffff;
-  width: 80%;
+  width: 75%;
 }
 
 .recipe-ingredients {
   display: flex;
   width: 100%;
   align-items: center;
+  justify-content: center;
+  height: 350px;
 }
-
-.recipe-detail .image {
-  width: 30%;
+.recipe-ingredients .image{
+  height: 100%;
+  width: 70%;
   display: flex;
   justify-content: center;
 }
-
-.recipe-detail .image img {
-  width: 100%;
-  max-width: 300px;
-  height: auto;
-  object-fit: cover;
-  border-radius: 5px;
-  margin-bottom: 10px;
+.recipe-ingredients .image img{
+  height: 100%;
+  width: 90%;
 }
 
-.recipe-detail .detail {
+.recipe-ingredients .detail{
+  width: 30%;
   display: flex;
-  width: 40%;
+  justify-content: center;
   flex-direction: column;
   align-items: center;
+}
+
+.recipe-ingredients .detail h1{
+  margin-bottom: 10px;
+  font-size: 40px;
+  color: brown;
+}
+.recipe-ingredients .detail h3{
+  font-size: 20px;
+  color: gray ;
+}
+.recipe-ingredients .detail a{
+  font-size: 30px;
+  transition: 0.5s all;
+}
+
+.recipe-ingredients .detail a:hover{
+  transform: scale(1.25);
+  color: red;
+}
+.recipe-ingredients .detail a:first-of-type{
+  margin-top: 10px;
   margin-bottom: 10px;
 }
 
 .recipe-detail .ingredients{
-  width: 30%;
+  margin: 2rem 0;
+  height: auto;
+}
+
+.recipe-detail .ingredients ul{
   display: flex;
-  justify-content: center;
-  flex-direction: column;
-  padding: 35px;
+  list-style: none;
+  flex-wrap: wrap;
 }
 
-.recipe-detail .detail h1 {
-  font-size: 37px;
-  margin-bottom: 5px;
+.recipe-detail .ingredients ul li{
+  margin-right: 10px;
+}
+.recipe-instruction ul{
+  list-style: none;
 }
 
-.recipe-detail .detail h3 {
-  font-size: 25px;
-  color: #888888;
-  margin-bottom: 5px;
-}
 
-.recipe-detail .detail a {
-  font-size: 18px;
-  color: #007bff;
-  text-decoration: none;
-  margin-top: 5px;
-}
-
-.recipe-detail .detail a:hover {
-  text-decoration: underline;
-}
-
-.recipe-detail .ingredients {
-  margin-top: 20px;
-}
-
-.recipe-detail .ingredients h2 {
-  font-size: 20px;
-  margin-bottom: 10px;
-}
-
-.recipe-detail .ingredients ul {
-  list-style-type: decimal;
-  padding: 0;
-  margin: 0 16px;
-}
-
-.recipe-detail .ingredients li {
-  margin-bottom: 5px;
-}
-
-.recipe-detail .recipe-instruction {
-  margin-top: 20px;
-}
-
-.recipe-detail .recipe-instruction h2 {
-  font-size: 20px;
-  margin-bottom: 10px;
-}
-
-.recipe-detail .recipe-instruction p {
-  font-size: 16px;
-  line-height: 1.5;
-}
 
 .select-area{
   height: 58px;
@@ -574,4 +612,24 @@ header {
   text-align: center;
   font-size: 24px;
   color: black;
+}
+
+.get-random a{
+  position: absolute;
+  top: -35px;
+  left: -82px;
+  height: 24px;
+  width: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ccb4b4;
+  text-decoration: none;
+  border-radius: 20px;
+  transition: 0.5s all;
+}
+
+.get-random a:hover{
+  transform: scale(1.1);
+  color: red;
 }

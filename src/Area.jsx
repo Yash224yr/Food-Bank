@@ -2,7 +2,6 @@ import axios from 'axios'
 import React, { useContext, useEffect, useState } from 'react'
 import SearchIcon from '@mui/icons-material/Search';
 import { Link } from 'react-router-dom';
-import { mealcontext } from './App';
 
 
 function Area() {
@@ -10,7 +9,6 @@ function Area() {
     const [area, setArea] = useState([])
     const [list, setlist] = useState("")
     const [arealist, setarealist] = useState([])
-  const { receipe, setReceipe } = useContext(mealcontext);
 
 
     useEffect(() => {
@@ -41,10 +39,6 @@ function Area() {
         setlist(e.target.value)
     }
 
-    function getRecipe(meal) {
-        setReceipe(meal);
-    }
-
 
 
     return (
@@ -68,7 +62,7 @@ function Area() {
                         return (
                             <div className='area-dish' key={index}>
                                 <img src={meal.strMealThumb} alt="" />
-                                <Link to='/receipe' onClick={() => getRecipe(meal.idMeal)}>{meal.strMeal} </Link>
+                                <Link  to={`/receipe/${meal.idMeal}`} onClick={() => getRecipe(meal.idMeal)}>{meal.strMeal} </Link>
                             </div>
                         )
                     })
