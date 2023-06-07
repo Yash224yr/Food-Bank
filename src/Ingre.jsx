@@ -11,7 +11,6 @@ function Ingre() {
     const [showCategories, setShowCategories] = useState(true);
     const [error, setError] = useState('');
     const { receipe, setReceipe } = useContext(mealcontext);
-    const { filter , setFilter} = useContext(mealcontext);
 
 
     useEffect(() => {
@@ -26,16 +25,13 @@ function Ingre() {
             });
     }, []);
 
-    console.log(filter)
 
 
     function getingremeal(e, meal) {
         e.preventDefault();
         const ingredient = input.length >= 1 ? input : meal;
-        setFilter(ingredient)
-        console.log(filter)
         axios
-            .get(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${filter}`)
+            .get(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${ingredient}`)
             .then((result) => {
                 console.log(result);
                 if (result.data.meals) {
