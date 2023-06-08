@@ -1,10 +1,14 @@
-    import React, {  useEffect, useState } from 'react'
+    import React, {  useContext, useEffect, useState } from 'react'
     import axios from 'axios'
     import { Link, useParams } from 'react-router-dom'
+    import { mealcontext } from './App'
 
     function GetList() {
       const [list, getlist] = useState([])
       const{category} = useParams()
+    const {description , setDescription} = useContext(mealcontext)
+      
+
 
 
       useEffect(() => {
@@ -23,6 +27,7 @@
 
       return (
         <div className='categories'>
+          { description ? (<p>{description}</p>) : ("")}
           <div className='area-list'>
             {
               list.map((meal, index) => {

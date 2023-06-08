@@ -1,13 +1,14 @@
 import React, { useContext, useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import InfoIcon from '@mui/icons-material/Info';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import { mealcontext } from './App';
 
 
 function Categorie() {
     const [categories, setCategories] = useState([]);
     const [check, setCheck] = useState(true)
+    const {description , setDescription} = useContext(mealcontext)
 
 
     useEffect(() => {
@@ -22,7 +23,13 @@ function Categorie() {
             });
     }, []);
 
+
+    function getdescription(meal){
+        setDescription(meal)
+    }
+
    
+
 
 
 
@@ -36,16 +43,14 @@ function Categorie() {
                 {categories.map((meal, index) => (
                     <div key={index} className='category-item'>
                         <img className='imggoto' src={meal.strCategoryThumb} alt="" />
-                        <h1 className='goto'><Link to={`/list/${meal.strCategory}`}>{meal.strCategory}</Link></h1>
+                        <h1 className='goto'>{meal.strCategory}</h1>
                         <div className='icons'>
-                            <h1><Link to={`/list/${meal.strCategory}`}>{meal.strCategory}</Link></h1>
+                            <h1><Link>{meal.strCategory}</Link></h1>
                             <div className='iconlogo'>
-                                <a href=""><InfoIcon></InfoIcon></a>
                                 <FavoriteBorderIcon></FavoriteBorderIcon>
                             </div>
+                            <button onClick={()=>{getdescription(meal.strCategoryDescription)}} ><Link to={`/list/${meal.strCategory}`}>Explore</Link></button>
                         </div>
-                       
-
                     </div>
                 ))}
             </div>

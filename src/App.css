@@ -219,7 +219,7 @@ header {
 
 .category-item .icons{
   position: absolute;
-  top: -150%;
+  top: -180%;
   bottom: 0;
   left: 0;
   right: 0;
@@ -227,6 +227,27 @@ header {
   transition: 0.5s ease;
   z-index: 2;
 }
+
+.category-item button{
+  height: 33px;
+  width: 81px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: brown;
+  color: white;
+  border: none;
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-top: 3rem;
+}
+
+
+.category-item button:hover{
+  transform: scale(1.25);
+}
+
 
 .category-item:hover .goto{
   display: none;
@@ -255,7 +276,7 @@ header {
   left: -100%;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.847);
+  background-color: rgba(0, 0, 0, 0.76);
   padding: 0;
   z-index: 1;
   transition: 0.5s ease;
@@ -300,9 +321,6 @@ header {
 }
 
 
-
-
-
 .category-item h1 {
   font-size: 24px;
   font-weight: bold;
@@ -313,9 +331,6 @@ header {
   text-align: center;
 }
 
-.category-item h1:hover {
-  color: brown;
-}
 
 .category-item a {
   text-decoration: none;
