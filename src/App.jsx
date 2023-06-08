@@ -9,6 +9,7 @@ import Ingrdients from './Ingrdients';
 import Receipe from './Receipe';
 import Area from './Area';
 import Ingre from './Ingre';
+import Fav from './Fav';
 export const mealcontext = createContext(null)
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
           <Route path='/receipe/:id' element={<Receipe/>}></Route>
           <Route path='/area' element={<Area/>}></Route>
           <Route path='/ingre' element={<Ingre/>} ></Route>
+          <Route path='/fav' element={<Fav/>} ></Route>
         </Routes>
       </BrowserRouter>
     </mealcontext.Provider>

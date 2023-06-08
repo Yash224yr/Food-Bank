@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Signika&display=swap');
 
 
@@ -19,7 +18,7 @@ header {
   padding: 0 70px;
 }
 
-.get-random{
+.get-random {
   position: fixed;
   bottom: 33px;
   right: 42px;
@@ -28,7 +27,7 @@ header {
 }
 
 
-.get-random button{
+.get-random button {
   border: none;
   background-color: brown;
   height: 68px;
@@ -47,6 +46,7 @@ header {
   0% {
     transform: translateY(0);
   }
+
   100% {
     transform: translateY(-10px);
   }
@@ -112,6 +112,7 @@ header {
   font-size: 2.7vw;
   margin: 5rem 0;
 }
+
 .home .tag-line h3 {
   color: white;
   text-align: center;
@@ -120,7 +121,7 @@ header {
   max-width: 100%;
   font-size: 2.7vw;
   margin: 3rem 0;
- transition: 0.5s ease;
+  transition: 0.5s ease;
 
 }
 
@@ -172,7 +173,7 @@ header {
   color: black;
 }
 
-.text{
+.text {
   padding: 25px 26px;
   position: relative;
 }
@@ -185,7 +186,7 @@ header {
   align-items: center;
 }
 
-.text-line{
+.text-line {
   position: absolute;
   height: 5px;
   width: 145px;
@@ -212,12 +213,12 @@ header {
   cursor: pointer;
 }
 
-.category-item .icons h1{
+.category-item .icons h1 {
   color: white;
   font-size: 30px;
 }
 
-.category-item .icons{
+.category-item .icons {
   position: absolute;
   top: -180%;
   bottom: 0;
@@ -228,7 +229,7 @@ header {
   z-index: 2;
 }
 
-.category-item button{
+.category-item button {
   height: 33px;
   width: 81px;
   display: flex;
@@ -244,32 +245,32 @@ header {
 }
 
 
-.category-item button:hover{
+.category-item button:hover {
   transform: scale(1.25);
 }
 
 
-.category-item:hover .goto{
+.category-item:hover .goto {
   display: none;
 }
 
-.iconlogo{
+.iconlogo {
   margin-top: 10px;
 }
 
 
-.category-item:hover .icons{
+.category-item:hover .icons {
   top: -10%;
 }
 
-.icons{
+.icons {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.category-item::before{
+.category-item::before {
   content: "";
   position: absolute;
   top: 0;
@@ -282,11 +283,11 @@ header {
   transition: 0.5s ease;
 }
 
-.category-item:hover::before{
+.category-item:hover::before {
   left: 0;
 }
 
-.icons .iconlogo svg{
+.icons .iconlogo svg {
   color: white;
   z-index: 1;
   font-size: 40px;
@@ -425,18 +426,20 @@ header {
   justify-content: center;
   height: 350px;
 }
-.recipe-ingredients .image{
+
+.recipe-ingredients .image {
   height: 100%;
   width: 70%;
   display: flex;
   justify-content: center;
 }
-.recipe-ingredients .image img{
+
+.recipe-ingredients .image img {
   height: 100%;
   width: 90%;
 }
 
-.recipe-ingredients .detail{
+.recipe-ingredients .detail {
   width: 30%;
   display: flex;
   justify-content: center;
@@ -444,50 +447,54 @@ header {
   align-items: center;
 }
 
-.recipe-ingredients .detail h1{
+.recipe-ingredients .detail h1 {
   margin-bottom: 10px;
   font-size: 40px;
   color: brown;
 }
-.recipe-ingredients .detail h3{
+
+.recipe-ingredients .detail h3 {
   font-size: 20px;
-  color: gray ;
+  color: gray;
 }
-.recipe-ingredients .detail a{
+
+.recipe-ingredients .detail a {
   font-size: 30px;
   transition: 0.5s all;
 }
 
-.recipe-ingredients .detail a:hover{
+.recipe-ingredients .detail a:hover {
   transform: scale(1.25);
   color: red;
 }
-.recipe-ingredients .detail a:first-of-type{
+
+.recipe-ingredients .detail a:first-of-type {
   margin-top: 10px;
   margin-bottom: 10px;
 }
 
-.recipe-detail .ingredients{
+.recipe-detail .ingredients {
   margin: 2rem 0;
   height: auto;
 }
 
-.recipe-detail .ingredients ul{
+.recipe-detail .ingredients ul {
   display: flex;
   list-style: none;
   flex-wrap: wrap;
 }
 
-.recipe-detail .ingredients ul li{
+.recipe-detail .ingredients ul li {
   margin-right: 10px;
 }
-.recipe-instruction ul{
+
+.recipe-instruction ul {
   list-style: none;
 }
 
 
 
-.select-area{
+.select-area {
   height: 58px;
   width: 100%;
   background-color: #99627A;
@@ -496,25 +503,25 @@ header {
   align-items: center;
 }
 
-.select-area button{
+.select-area button {
   height: 40px;
   width: 40px;
   margin: 0 10px;
   background-color: brown;
   border: none;
   border-radius: 50%;
-  color: white; 
+  color: white;
   cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.select-area button svg{
+.select-area button svg {
   font-size: 28px;
 }
 
-.select-area select{
+.select-area select {
   height: 58%;
   width: 17%;
   border-radius: 20px;
@@ -523,25 +530,25 @@ header {
   cursor: pointer;
 }
 
-.error{
-  background:  url("images/topic-2.webp") no-repeat fixed center / contain;
+.error {
+  background: url("images/topic-2.webp") no-repeat fixed center / contain;
   height: 80vh;
 }
 
-.area-list{
+.area-list {
   display: flex;
   flex-wrap: wrap;
 }
 
 
-.area-dish img{
+.area-dish img {
   height: 100%;
   width: 100%;
-  transition:  0.5s ease;
+  transition: 0.5s ease;
 }
 
 
- .area-dish{
+.area-dish {
   width: 250px;
   height: 300px;
   display: flex;
@@ -560,7 +567,9 @@ header {
 
 
 
-.area-dish a{
+
+
+.gotoreceipe{
   position: absolute;
   font-size: 18px;
   text-align: center;
@@ -576,28 +585,57 @@ header {
   text-decoration: none;
 }
 
-.area-dish:hover img{
+.area-dish:hover img {
   transform: scale(1.1);
 }
 
-
-.area-dish:hover a{
-    height: 20%;
-    color: rgb(219, 34, 34);
+.area-dish h1 {
+  position: absolute;
+  top: -130px;
+  right: -112px;
+  background-color: rgba(0, 0, 0, 0.75);
+  height: 142px;
+  width: 142px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  color: white;
+  transition: 0.5s all ease;
 }
 
-.top-ingre{
-  display: flex; 
+.area-dish h1 svg{
+  margin-left: 30px;
+  margin-top: 50px;
+  font-size: 39px;
+  color: white;
+}
+
+
+
+.area-dish:hover h1 {
+  top: -56px;
+  right: -51px;
+}
+
+
+.area-dish:hover .gotoreceipe{
+  height: 20%;
+  color: rgb(219, 34, 34);
+}
+
+.top-ingre {
+  display: flex;
   flex-direction: column;
   background-color: #E9EDC9;
 }
-.top-ingre-meals{
+
+.top-ingre-meals {
   display: flex;
   flex-wrap: wrap;
 }
 
 
-.top-ingre-search{
+.top-ingre-search {
   text-align: center;
   height: 44px;
   width: 256px;
@@ -612,24 +650,24 @@ header {
   transition: 0.5s ease;
 }
 
-.top-ingre-search svg{
+.top-ingre-search svg {
   margin-left: 5px;
 }
 
-.top-ingre-search:hover{
+.top-ingre-search:hover {
   transform: scale(1.1);
-  background-color:white;
+  background-color: white;
   color: black;
 }
 
-.errormsg{
+.errormsg {
   margin: 1.5rem 0;
   text-align: center;
   font-size: 24px;
   color: black;
 }
 
-.get-random a{
+.get-random a {
   position: absolute;
   top: -35px;
   left: -82px;
@@ -644,7 +682,7 @@ header {
   transition: 0.5s all;
 }
 
-.get-random a:hover{
+.get-random a:hover {
   transform: scale(1.1);
   color: red;
 }

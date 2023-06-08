@@ -36,6 +36,7 @@ function Header() {
         <Link to='/'>Home</Link>
         <Link to='/ingre'>Ingredients</Link>
         <Link to='/area'>Regional Delicacies</Link>
+        <Link to="/fav">Favourite</Link>
       </div>
       <div className='get-random'>
         <button onClick={handleRandomMealClick}>  {check ? (<CloseIcon/>) : ("Random Meal") } </button>

@@ -2,6 +2,8 @@ import axios from 'axios'
 import React, { useContext, useEffect, useState } from 'react'
 import SearchIcon from '@mui/icons-material/Search';
 import { Link } from 'react-router-dom';
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+
 
 
 function Area() {
@@ -62,8 +64,10 @@ function Area() {
                         return (
                             <div className='area-dish' key={index}>
                                 <img src={meal.strMealThumb} alt="" />
-                                <Link  to={`/receipe/${meal.idMeal}`} onClick={() => getRecipe(meal.idMeal)}>{meal.strMeal} </Link>
+                                <Link className='gotoreceipe'  to={`/receipe/${meal.idMeal}`} onClick={() => getRecipe(meal.idMeal)}>{meal.strMeal} </Link>
+                                <h1><Link to="/fav" ><FavoriteBorderIcon/></Link></h1>
                             </div>
+                            
                         )
                     })
                 }

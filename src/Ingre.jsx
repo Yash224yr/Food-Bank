@@ -83,13 +83,13 @@ function Ingre() {
                 <div className="categories-list">
                     {ingre.map((meal, index) => (
                         <div key={index} className="category-item">
-                            <h1>
-                                <Link onClick={(e) => getingremeal(e, meal.strIngredient)}>{meal.strIngredient}</Link>
-                            </h1>
                             <img
                                 src={`https://www.themealdb.com/images/ingredients/${meal.strIngredient}.png`}
                                 alt=""
                             />
+                            <h1>
+                                <Link onClick={(e) => getingremeal(e, meal.strIngredient)}>{meal.strIngredient}</Link>
+                            </h1>
                         </div>
                     ))}
                 </div>

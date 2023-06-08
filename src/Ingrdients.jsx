@@ -3,6 +3,8 @@ import React, { useContext, useEffect, useState } from 'react';
 import { mealcontext } from './App';
 import SearchIcon from '@mui/icons-material/Search';
 import { Link } from 'react-router-dom';
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+
 
 function Ingredients() {
   const { search, setSearch } = useContext(mealcontext);
@@ -61,9 +63,10 @@ function Ingredients() {
             meal.map((meal, index) => {
               return (
                 <div className='area-dish' key={index}>
-                  <img src={meal.strMealThumb} alt="" />
-                  <Link  to={`/receipe/${meal.idMeal}`} onClick={() => getRecipe(meal.idMeal)}>{meal.strMeal}  </Link>
-                </div>
+                <img src={meal.strMealThumb} alt="" />
+                <Link className='gotoreceipe'  to={`/receipe/${meal.idMeal}`} onClick={() => getRecipe(meal.idMeal)}>{meal.strMeal} </Link>
+                <h1><Link to="/fav" ><FavoriteBorderIcon/></Link></h1>
+            </div>
               )
             })
           }
