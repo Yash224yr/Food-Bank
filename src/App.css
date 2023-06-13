@@ -18,6 +18,10 @@ header {
   padding: 0 70px;
 }
 
+header .menu{
+  display: none;
+}
+
 .get-random {
   position: fixed;
   bottom: 33px;
@@ -124,8 +128,6 @@ header {
   transition: 0.5s ease;
 
 }
-
-
 
 
 
@@ -250,9 +252,6 @@ header {
 }
 
 
-.category-item:hover .goto {
-  display: none;
-}
 
 .iconlogo {
   margin-top: 10px;
@@ -270,22 +269,6 @@ header {
   align-items: center;
 }
 
-.category-item::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.76);
-  padding: 0;
-  z-index: 1;
-  transition: 0.5s ease;
-}
-
-.category-item:hover::before {
-  left: 0;
-}
 
 .icons .iconlogo svg {
   color: white;
@@ -685,4 +668,36 @@ header {
 .get-random a:hover {
   transform: scale(1.1);
   color: red;
+}
+
+
+@media all and (max-width:1000px){
+  header{
+    padding: 0 14px;
+  }
+}
+
+@media all and (max-width:850px){
+  header{
+    padding: 0 50px;
+  }
+  .headerright{
+    position: absolute;
+    top: 10%;
+    right: 0;
+    height: 40vh;
+    background-color: rgba(0, 0, 0, 1);
+    width: 100%;
+    flex-direction: column;
+    transition: 0.5s ease-in-out;
+  }
+  header .menu{
+    display: block;
+  }
+  header .menu a{
+    color: white;
+  }
+  header .menu svg{
+    font-size: 40px;
+  }
 }
