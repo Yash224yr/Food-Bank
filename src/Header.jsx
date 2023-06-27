@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import SearchIcon from '@mui/icons-material/Search';
+import { mealcontext } from './App';
 
 
 
@@ -10,6 +11,8 @@ function Header() {
   const [random, setRandom] = useState('');
   const [check, setCheck] = useState(false);
   const [menu, setMenu] = useState(true)
+  const {search , setSearch} = useContext(mealcontext)
+
 
   const [isMenuActive, setIsMenuActive] = useState(false);
 
@@ -51,19 +54,21 @@ function Header() {
               type="text"
               name="search"
               className="search-input"
+              value={search}
+              onChange={(e)=>{setSearch(e.target.value)}}
               placeholder="Search for Meal"
               autoFocus
             />
             <button type="submit" className="search-submit" disabled>
-              <SearchIcon></SearchIcon>
+              <Link type='submit' to="/search-meal"  ><SearchIcon></SearchIcon></Link>
             </button>
           </form>
         </div>
         <div className={`menu ${isMenuActive ? 'is-active' : ''}`} id="menu">
           <ul className="menu-inner">
             <li className="menu-item">
-              <a href="#" className="menu-link" onClick={handleMenuLinkClick}>
-                Listing
+              <a href="#" className="menu-link">
+                Home
               </a>
             </li>
             <li className="menu-item">
