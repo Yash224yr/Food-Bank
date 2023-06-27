@@ -18,7 +18,7 @@ header {
   padding: 0 70px;
 }
 
-header .menu{
+header .menu {
   display: none;
 }
 
@@ -212,12 +212,12 @@ header .menu{
   position: relative;
   overflow: hidden;
   transition: 0.5s ease;
-  cursor: pointer;
 }
 
 .category-item .icons h1 {
   color: white;
   font-size: 30px;
+  cursor: pointer;
 }
 
 .category-item .icons {
@@ -295,13 +295,13 @@ header .menu{
 
 .category-item img,
 .meal-item img {
-  width: 200px;
-  height: 200px;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  border-radius: 50%;
+  /* border-radius: 50%; */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   margin: 0 auto;
-  cursor: pointer;
+
 }
 
 
@@ -310,9 +310,17 @@ header .menu{
   font-weight: bold;
   cursor: pointer;
   color: #333;
-  margin-top: 26px;
+  /* margin-top: 26px; */
   transition: color 0.3s ease;
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.category-item h1:hover {
+  color: brown;
 }
 
 
@@ -410,6 +418,7 @@ header .menu{
   height: 350px;
 }
 
+
 .recipe-ingredients .image {
   height: 100%;
   width: 70%;
@@ -474,6 +483,9 @@ header .menu{
 .recipe-instruction ul {
   list-style: none;
 }
+
+
+
 
 
 
@@ -552,7 +564,7 @@ header .menu{
 
 
 
-.gotoreceipe{
+.gotoreceipe {
   position: absolute;
   font-size: 18px;
   text-align: center;
@@ -574,34 +586,34 @@ header .menu{
 
 .area-dish h1 {
   position: absolute;
-  top: -130px;
-  right: -112px;
+  bottom: 58px;
+  right: -60px;
   background-color: rgba(0, 0, 0, 0.75);
-  height: 142px;
-  width: 142px;
+  height: 60px;
+  width: 60px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   color: white;
   transition: 0.5s all ease;
+  display: flex;
+  align-items: center;
 }
 
-.area-dish h1 svg{
-  margin-left: 30px;
-  margin-top: 50px;
-  font-size: 39px;
+.area-dish h1 svg {
+  margin-left: 5px;
   color: white;
+  position: absolute;
+  transform: translate(21%, -39%);
 }
-
 
 
 .area-dish:hover h1 {
-  top: -56px;
-  right: -51px;
+  right: -18px;
 }
 
 
-.area-dish:hover .gotoreceipe{
+.area-dish:hover .gotoreceipe {
   height: 20%;
   color: rgb(219, 34, 34);
 }
@@ -671,17 +683,18 @@ header .menu{
 }
 
 
-@media all and (max-width:1000px){
-  header{
+@media all and (max-width:1000px) {
+  header {
     padding: 0 14px;
   }
 }
 
-@media all and (max-width:850px){
-  header{
+@media all and (max-width:850px) {
+  header {
     padding: 0 50px;
   }
-  .headerright{
+
+  .headerright {
     position: absolute;
     top: 10%;
     right: 0;
@@ -691,13 +704,42 @@ header .menu{
     flex-direction: column;
     transition: 0.5s ease-in-out;
   }
-  header .menu{
+
+  header .menu {
     display: block;
   }
-  header .menu a{
+
+  header .menu a {
     color: white;
   }
-  header .menu svg{
+
+  header .menu svg {
     font-size: 40px;
+  }
+}
+
+
+
+@media all and (max-width:768px) {
+  .recipe-ingredients {
+    height: auto;
+    flex-direction: column;
+  }
+
+  .recipe-ingredients .image {
+    width: 100%;
+  }
+
+  .recipe-ingredients .image img {
+    height: 100%;
+    width: 100%;
+}
+
+  .recipe-ingredients .detail {
+    width: 100%;
+  }
+
+  .recipe-detail {
+    width: 90%;
   }
 }

@@ -59,17 +59,18 @@ function Ingredients() {
       ) : (
 
         <div className='area-list'>
-          {
-            meal.map((meal, index) => {
-              return (
-                <div className='area-dish' key={index}>
-                <img src={meal.strMealThumb} alt="" />
-                <Link className='gotoreceipe'  to={`/receipe/${meal.idMeal}`} onClick={() => getRecipe(meal.idMeal)}>{meal.strMeal} </Link>
-                <h1><Link to="/fav" ><FavoriteBorderIcon/></Link></h1>
-            </div>
-              )
-            })
-          }
+           {
+                    meal.map((meal, index) => {
+                        return (
+                            <div className='area-dish' key={index}>
+                                <img src={meal.strMealThumb} alt="" />
+                                <Link className='gotoreceipe'  to={`/receipe/${meal.idMeal}`} onClick={() => getRecipe(meal.idMeal)}>{meal.strMeal} </Link>
+                                <h1><Link to="/fav" ><FavoriteBorderIcon/></Link></h1>
+                            </div>
+                            
+                        )
+                    })
+                }
         </div>
       )}
     </div>

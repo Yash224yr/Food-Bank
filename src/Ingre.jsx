@@ -2,6 +2,8 @@ import React, { useContext, useEffect, useState } from 'react';
 import axios from 'axios';
 import SearchIcon from '@mui/icons-material/Search';
 import { Link } from 'react-router-dom';
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+
 
 function Ingre() {
     const [ingre, setIngre] = useState([]);
@@ -66,16 +68,18 @@ function Ingre() {
 
             {!error && (
                 <div className="area-list">
-                    {meal.map((meal, index) => {
+                     {
+                    meal.map((meal, index) => {
                         return (
-                            <div className="area-dish" key={index}>
+                            <div className='area-dish' key={index}>
                                 <img src={meal.strMealThumb} alt="" />
-                                <Link  to={`/receipe/${meal.idMeal}`} onClick={() => getRecipe(meal.idMeal)}>
-                                    {meal.strMeal}
-                                </Link>
+                                <Link className='gotoreceipe'  to={`/receipe/${meal.idMeal}`} onClick={() => getRecipe(meal.idMeal)}>{meal.strMeal} </Link>
+                                <h1><Link to="/fav" ><FavoriteBorderIcon/></Link></h1>
                             </div>
-                        );
-                    })}
+                            
+                        )
+                    })
+                }
                 </div>
             )}
 
