@@ -9,7 +9,7 @@ function Categorie() {
     const [categories, setCategories] = useState([]);
     const [check, setCheck] = useState(true)
     const { description, setDescription } = useContext(mealcontext)
-    const [count , setCount] = useState(0)
+    const [count, setCount] = useState(0)
 
     let Mealtext = [
         'Wanna make a delicious dish ?',
@@ -21,11 +21,11 @@ function Categorie() {
 
     useEffect(() => {
         const interval = setInterval(() => {
-          setCount((prevCount) => (prevCount + 1) % Mealtext.length);
+            setCount((prevCount) => (prevCount + 1) % Mealtext.length);
         }, 3000);
-  
+
         return () => clearInterval(interval);
-      }, []);
+    }, []);
 
 
     useEffect(() => {
@@ -58,7 +58,9 @@ function Categorie() {
                 <button>Explore <span></span></button>
             </div>
             <div className='text'>
-                <h1 className='categorie-text'>Categories</h1>
+                <div class="categorie-text">
+                    <h1>Receipe By<span>Categories</span></h1>
+                </div>
                 <div className='text-line'></div>
             </div>
             <div className='categories-list'>
