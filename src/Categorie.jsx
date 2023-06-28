@@ -4,10 +4,11 @@ import { Link } from 'react-router-dom';
 import { mealcontext } from './App';
 
 
+
 function Categorie() {
     const [categories, setCategories] = useState([]);
     const [check, setCheck] = useState(true)
-    const {description , setDescription} = useContext(mealcontext)
+    const { description, setDescription } = useContext(mealcontext)
 
 
     useEffect(() => {
@@ -23,17 +24,20 @@ function Categorie() {
     }, []);
 
 
-    function getdescription(meal){
+    function getdescription(meal) {
         setDescription(meal)
     }
 
-   
+
 
 
 
 
     return (
         <div className='categories'>
+            <div className='home-image'>
+              <h1>Helo</h1>
+            </div>
             <div className='text'>
                 <h1 className='categorie-text'>Categories</h1>
                 <div className='text-line'></div>
@@ -42,7 +46,7 @@ function Categorie() {
                 {categories.map((meal, index) => (
                     <div key={index} className='category-item'>
                         <img className='imggoto' src={meal.strCategoryThumb} alt="" />
-                        <h1 className='goto'  onClick={()=>{getdescription(meal.strCategoryDescription)}}><Link to={`/list/${meal.strCategory}`}>{meal.strCategory}</Link></h1>
+                        <h1 className='goto' onClick={() => { getdescription(meal.strCategoryDescription) }}><Link to={`/list/${meal.strCategory}`}>{meal.strCategory}</Link></h1>
                     </div>
                 ))}
             </div>
