@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import SearchIcon from '@mui/icons-material/Search';
 import { mealcontext } from './App';
+import logo from "./images/logo.png"
 
 
 
@@ -45,9 +46,7 @@ function Header() {
   return (
     <header className="header" id="header">
       <nav className="navbar container">
-        <a href="#" className="brand">
-          Brand
-        </a>
+        <img src={logo} alt="" className='brand' />
         <div className="search">
           <form className="search-form">
             <input
