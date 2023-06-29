@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import axios from 'axios'
 import { Link, useParams } from 'react-router-dom'
 import { mealcontext } from './App'
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 
 
 
@@ -31,19 +32,21 @@ function GetList() {
   }
 
 
-  console.log(favlist)
 
   return (
-    <div className='categories'>
+    <div className='dish'>
       {description ? (<p>{description}</p>) : ("")}
-      <div className='area-list'>
+      <div className='dish-list'>
         {
           list.map((meal, index) => {
             return (
-              <div className='area-dish' key={index}>
+              <div className='dish-key' key={index}>
                 <img src={meal.strMealThumb} alt="" />
-                <Link className='gotoreceipe' to={`/receipe/${meal.idMeal}`} onClick={() => getRecipe(meal.idMeal)}>{meal.strMeal} </Link>
-                <button onClick={() => { handlerfav(meal.idMeal) }} >Fav</button>
+                <div className='dish-receipe' >
+                  <Link className='gotoreceipe'  >{meal.strMeal} </Link>
+                  <button onClick={() => { handlerfav(meal.idMeal) }} ><FavoriteBorderIcon /></button>
+                  <button  onClick={() => getRecipe(meal.idMeal)} >  <Link  to={`/receipe/${meal.idMeal}`}  > Get Receipe</Link></button>
+                </div>
               </div>
             )
           })

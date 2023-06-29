@@ -2,28 +2,12 @@ import React, { useContext, useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { mealcontext } from './App';
-import LocalDiningIcon from '@mui/icons-material/LocalDining';
 
 function Categorie() {
   const [categories, setCategories] = useState([]);
   const [check, setCheck] = useState(true);
   const { description, setDescription } = useContext(mealcontext);
-  const [count, setCount] = useState(0);
 
-  let Mealtext = [
-    'Wanna make a delicious dish?',
-    'Search for your next meal!',
-    'Discover new recipes!',
-    'Cook up something amazing!',
-  ];
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCount((prevCount) => (prevCount + 1) % Mealtext.length);
-    }, 3000);
-
-    return () => clearInterval(interval);
-  }, []);
 
   useEffect(() => {
     axios
@@ -42,16 +26,7 @@ function Categorie() {
 
   return (
     <div className="categories">
-      <div className="home-image">
-        <h1>
-          "Discover an Abundance of <span>Delicious Recipes</span> with Our Advanced Search Functionality."
-        </h1>
-        <h2>{Mealtext[count]}</h2>
-        <button>
-          Explore <LocalDiningIcon />
-          <span></span>
-        </button>
-      </div>
+
       <div className="text">
         <div className="categorie-text">
           <h1>

@@ -1,5 +1,6 @@
 import React from 'react'
 import Categorie from './Categorie'
+import Home from './Home'
 
 
 
@@ -7,7 +8,7 @@ import Categorie from './Categorie'
 function First() {
   return (
     <div>
-
+      <Home></Home>
       <Categorie></Categorie>
      
     </div>
