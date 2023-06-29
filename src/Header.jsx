@@ -66,9 +66,7 @@ function Header() {
         <div className={`menu ${isMenuActive ? 'is-active' : ''}`} id="menu">
           <ul className="menu-inner">
             <li className="menu-item">
-              <a href="#" className="menu-link">
-                Home
-              </a>
+              <Link to="/" >Home</Link>
             </li>
             <li className="menu-item">
               <a href="#" className="menu-link" onClick={handleMenuLinkClick}>

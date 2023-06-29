@@ -61,8 +61,8 @@ html {
 main {
   overflow: hidden;
 }
-
-a,
+ 
+.header a,
 button {
   cursor: pointer;
   user-select: none;
@@ -70,10 +70,11 @@ button {
   outline: none;
   background: none;
   box-shadow: none;
+  color: black;
 }
 
-img,
-video {
+.header  img,
+.header video {
   display: block;
   max-width: 100%;
   height: auto;
@@ -476,7 +477,6 @@ video {
   text-transform: uppercase;
   font-family: "Raleway", sans-serif;
   font-weight: 500;
-
   display: grid;
   grid-template-columns: 1fr max-content 1fr;
   grid-template-rows: 27px 0;
@@ -499,9 +499,125 @@ video {
   padding: 0 4rem;
 }
 
+.categories-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.category-item {
+  position: relative;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+}
+
+.imggoto {
+  width: 100%;
+  object-fit: cover;
+  margin-top: 20px;
+}
+
+.goto {
+  padding: 10px;
+  font-size: 18px;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  /* background-color: rgba(0, 0, 0, 0.4); */
+}
+
+.goto a {
+  color: #333;
+  text-decoration: none;
+}
 
 
 
+.category-description {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  font-size: 14px;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.category-item:hover .category-description {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.cta {
+  position: relative;
+  margin: auto;
+  padding: 12px 18px;
+  transition: all 0.2s ease;
+  border: none;
+  background: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+ }
+ 
+ .cta:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  border-radius: 50px;
+  background: #b1dae7;
+  width: 45px;
+  height: 45px;
+  transition: all 0.3s ease;
+ }
+ 
+ .cta span {
+  position: relative;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: brown;
+ }
+ 
+ .cta svg {
+  position: relative;
+  top: 0;
+  margin-left: 10px;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke: brown;
+  stroke-width: 2;
+  transform: translateX(-5px);
+  transition: all 0.3s ease;
+ }
+ 
+ .cta:hover:before {
+  width: 100%;
+  background: #b1dae7;
+ }
+ 
+ .cta:hover svg {
+  transform: translateX(0);
+ }
+ 
+ .cta:active {
+  transform: scale(0.95);
+ }
+
+ button.cta a {
+  color: brown;
+}
 
 
 

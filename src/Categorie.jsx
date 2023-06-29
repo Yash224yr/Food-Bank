@@ -56,7 +56,7 @@ function Categorie() {
             <div className='home-image'>
                 <h1>"Discover an Abundance of <span>Delicious Recipes </span> with Our Advanced Search Functionality."</h1>
                 <h2>{Mealtext[count]}</h2>
-                <button>Explore <LocalDiningIcon/><span></span></button>
+                <button>Explore <LocalDiningIcon /><span></span></button>
             </div>
             <div className='text'>
                 <div class="categorie-text">
@@ -68,7 +68,14 @@ function Categorie() {
                 {categories.map((meal, index) => (
                     <div key={index} className='category-item'>
                         <img className='imggoto' src={meal.strCategoryThumb} alt="" />
-                        <h1 className='goto' onClick={() => { getdescription(meal.strCategoryDescription) }}><Link to={`/list/${meal.strCategory}`}>{meal.strCategory}</Link></h1>
+                        <h1 className='goto' >{meal.strCategory}</h1>
+                        <button class="cta"  onClick={() => { getdescription(meal.strCategoryDescription) }} >
+                            <span><Link to={`/list/${meal.strCategory}`}>Discover Receies </Link></span>
+                            <svg viewBox="0 0 13 10" height="10px" width="15px">
+                                <path d="M1,5 L11,5"></path>
+                                <polyline points="8 1 12 5 8 9"></polyline>
+                            </svg>
+                        </button>
                     </div>
                 ))}
             </div>
