@@ -69,9 +69,7 @@ function Header() {
               <Link to="/" >Home</Link>
             </li>
             <li className="menu-item">
-              <a href="#" className="menu-link" onClick={handleMenuLinkClick}>
-                Feature
-              </a>
+              <Link to="/ingre" >Ingredients</Link>
             </li>
             <li className="menu-item">
               <a href="#" className="menu-link" onClick={handleMenuLinkClick}>
