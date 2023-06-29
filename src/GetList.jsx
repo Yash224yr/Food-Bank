@@ -8,7 +8,7 @@ import { mealcontext } from './App'
 function GetList() {
   const [list, getlist] = useState([])
   const { category } = useParams()
-  const { description, setDescription, favlist , setFavList } = useContext(mealcontext)
+  const { description, setDescription, favlist, setFavList } = useContext(mealcontext)
 
 
 
@@ -24,12 +24,14 @@ function GetList() {
   }, [])
 
 
-  function handlerfav(meal){
-    setFavList([...favlist, meal])
+  function handlerfav(meal) {
+    if (!favlist.includes(meal)) {
+      setFavList([...favlist, meal])
+    }
   }
 
 
-console.log(favlist)
+  console.log(favlist)
 
   return (
     <div className='categories'>
@@ -41,7 +43,7 @@ console.log(favlist)
               <div className='area-dish' key={index}>
                 <img src={meal.strMealThumb} alt="" />
                 <Link className='gotoreceipe' to={`/receipe/${meal.idMeal}`} onClick={() => getRecipe(meal.idMeal)}>{meal.strMeal} </Link>
-                <button onClick={()=>{handlerfav(meal.idMeal)}} >Fav</button>
+                <button onClick={() => { handlerfav(meal.idMeal) }} >Fav</button>
               </div>
             )
           })

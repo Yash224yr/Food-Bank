@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 
 function Fav() {
-  const { favlist } = useContext(mealcontext);
+  const { favlist, setFavList } = useContext(mealcontext);
   const [fav, setFav] = useState([]);
 
   useEffect(() => {
@@ -16,7 +16,6 @@ function Fav() {
         );
         const responses = await Promise.all(mealPromises);
         const meals = responses.map((response) => response.data.meals[0]);
-        console.log(meals);
         setFav(meals);
       } catch (error) {
         console.log(error);
@@ -29,6 +28,7 @@ function Fav() {
   }, [favlist]);
 
   function handlerdelete(index) {
+    setFavList(favlist.filter((list, ind) => ind !== index));
     setFav(fav.filter((_, ind) => ind !== index));
   }
 
@@ -60,5 +60,6 @@ function Fav() {
     </div>
   );
 }
+
 
 export default Fav;
