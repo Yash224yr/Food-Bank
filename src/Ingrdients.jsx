@@ -1,7 +1,6 @@
 import axios from 'axios';
 import React, { useContext, useEffect, useState } from 'react';
 import { mealcontext } from './App';
-import SearchIcon from '@mui/icons-material/Search';
 import { Link } from 'react-router-dom';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 
@@ -9,7 +8,6 @@ import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 function Ingredients() {
   const { search, setSearch } = useContext(mealcontext);
   const [meal, setMeal] = useState([]);
-  const [input, setInput] = useState('');
   const [error, setError] = useState('');
 
   useEffect(() => {
@@ -40,18 +38,8 @@ function Ingredients() {
 
   return (
     <div className='search-meal'>
-      <form onSubmit={handleSubmit}>
-        <input
-          type='text'
-          placeholder='Search Your Meal'
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-        />
-        <button type='submit'>
-          <SearchIcon />
-        </button>
-      </form>
 
+  
       {error ? (
         <div className='error'>
 
@@ -59,18 +47,18 @@ function Ingredients() {
       ) : (
 
         <div className='area-list'>
-           {
-                    meal.map((meal, index) => {
-                        return (
-                            <div className='area-dish' key={index}>
-                                <img src={meal.strMealThumb} alt="" />
-                                <Link className='gotoreceipe'  to={`/receipe/${meal.idMeal}`} onClick={() => getRecipe(meal.idMeal)}>{meal.strMeal} </Link>
-                                <h1><Link to="/fav" ><FavoriteBorderIcon/></Link></h1>
-                            </div>
-                            
-                        )
-                    })
-                }
+          {
+            meal.map((meal, index) => {
+              return (
+                <div className='area-dish' key={index}>
+                  <img src={meal.strMealThumb} alt="" />
+                  <Link className='gotoreceipe' to={`/receipe/${meal.idMeal}`} onClick={() => getRecipe(meal.idMeal)}>{meal.strMeal} </Link>
+                  <h1><Link to="/fav" ><FavoriteBorderIcon /></Link></h1>
+                </div>
+
+              )
+            })
+          }
         </div>
       )}
     </div>

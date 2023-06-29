@@ -6,11 +6,9 @@ import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 
 function Ingre() {
     const [ingre, setIngre] = useState([]);
-    const [input, setInput] = useState('');
     const [meal, setMeal] = useState([]);
     const [showCategories, setShowCategories] = useState(true);
     const [error, setError] = useState('');
-    const [showMore, setShowMore] = useState(false);
     const [visibleItems, setVisibleItems] = useState(20);
 
     useEffect(() => {
@@ -27,7 +25,6 @@ function Ingre() {
 
     function getingremeal(e, meal) {
         e.preventDefault();
-        const ingredient = input.length >= 1 ? input : meal;
         axios
             .get(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${ingredient}`)
             .then((result) => {
@@ -62,7 +59,7 @@ function Ingre() {
                     {ingre.slice(0, visibleItems).map((meal, index) => (
                         <div key={index} className='category-item-ingre'>
                             <img className='imggoto' src={`https://www.themealdb.com/images/ingredients/${meal.strIngredient}.png`} alt="" />
-                            <h1 className='goto' >{meal.strIngredient}</h1>
+                            <h1 className='goto'>{meal.strIngredient}</h1>
                             <button className="cta" onClick={(e) => getingremeal(e, meal.strIngredient)}>
                                 <span>Discover Recipes</span>
                                 <svg viewBox="0 0 13 10" height="10px" width="15px">

@@ -2,13 +2,13 @@ import React, { useContext, useEffect, useState } from 'react'
 import axios from 'axios'
 import { Link, useParams } from 'react-router-dom'
 import { mealcontext } from './App'
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+
 
 
 function GetList() {
   const [list, getlist] = useState([])
   const { category } = useParams()
-  const { description, setDescription } = useContext(mealcontext)
+  const { description, setDescription, favlist , setFavList } = useContext(mealcontext)
 
 
 
@@ -24,8 +24,12 @@ function GetList() {
   }, [])
 
 
+  function handlerfav(meal){
+    setFavList([...favlist, meal])
+  }
 
 
+console.log(favlist)
 
   return (
     <div className='categories'>
@@ -37,7 +41,7 @@ function GetList() {
               <div className='area-dish' key={index}>
                 <img src={meal.strMealThumb} alt="" />
                 <Link className='gotoreceipe' to={`/receipe/${meal.idMeal}`} onClick={() => getRecipe(meal.idMeal)}>{meal.strMeal} </Link>
-                <h1><Link to="/fav" ><FavoriteBorderIcon /></Link></h1>
+                <button onClick={()=>{handlerfav(meal.idMeal)}} >Fav</button>
               </div>
             )
           })

@@ -72,14 +72,10 @@ function Header() {
               <Link to="/ingre" >Ingredients</Link>
             </li>
             <li className="menu-item">
-              <a href="#" className="menu-link" onClick={handleMenuLinkClick}>
-                Popular
-              </a>
+              <Link to="/area" >Regional Dishes</Link>
             </li>
             <li className="menu-item">
-              <a href="#" className="menu-link" onClick={handleMenuLinkClick}>
-                Support
-              </a>
+              <Link to="/fav">Favorite</Link>
             </li>
           </ul>
         </div>
