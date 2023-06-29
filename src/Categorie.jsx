@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { mealcontext } from './App';
+import LocalDiningIcon from '@mui/icons-material/LocalDining';
 
 
 
@@ -55,7 +56,7 @@ function Categorie() {
             <div className='home-image'>
                 <h1>"Discover an Abundance of <span>Delicious Recipes </span> with Our Advanced Search Functionality."</h1>
                 <h2>{Mealtext[count]}</h2>
-                <button>Explore <span></span></button>
+                <button>Explore <LocalDiningIcon/><span></span></button>
             </div>
             <div className='text'>
                 <div class="categorie-text">

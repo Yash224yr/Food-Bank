@@ -422,6 +422,13 @@ video {
   top: 70%;
   left: 50%;
   transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.categories .home-image button svg{
+  margin-left: 5px;
 }
 
 .categories .home-image button::before {
@@ -485,6 +492,11 @@ video {
   border-top: 1px solid #ccc;
   height: 5px;
   background-color: #f8f8f8;
+}
+
+
+.categories .categories-list{
+  padding: 0 4rem;
 }
 
 
