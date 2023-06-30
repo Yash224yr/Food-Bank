@@ -39,15 +39,21 @@ function Fav() {
       {favlist &&
         fav.map((meal, index) => (
           <div key={index} className='fav-list'>
+            <div className='fav-dish-image' >
+
             <img src={meal.strMealThumb} alt='' />
-            <h1>{meal.strMeal}</h1>
-            <h2>{meal.strCategory}</h2>
-            <h3>{meal.strArea}</h3>
-            <div className='favlist-edit'>
-              <DeleteIcon onClick={() => handlerdelete(index)} ></DeleteIcon>
-              <Link to={`/receipe/${meal.idMeal}`}>Recipe</Link>
-              <button></button>
             </div>
+            <div  className= 'fav-dish-info' >
+              <h1>{meal.strMeal}</h1>
+              <h2>{meal.strCategory}</h2>
+              <h3>{meal.strArea}</h3>
+              <div className='favlist-edit'>
+                <DeleteIcon onClick={() => handlerdelete(index)} ></DeleteIcon>
+                <Link to={`/receipe/${meal.idMeal}`}>Recipe</Link>
+                <button></button>
+              </div>
+            </div>
+
           </div>
         ))}
     </div>

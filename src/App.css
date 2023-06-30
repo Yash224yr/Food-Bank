@@ -662,49 +662,96 @@ button.cta a {
 }
 
 .fav {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 20px;
+  padding: 0 4rem;
 }
 
 .fav-list {
-  width: 300px;
+  width: 100%;
+  max-width: 400px;
   margin: 20px;
   padding: 10px;
   background-color: #e8e8e8;
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   text-align: center;
+  display: flex;
+  justify-content: space-evenly;
 }
 
-.fav-list img {
+.fav-list .fav-dish-image {
+  width: 50%;
+  height: 100%;
+}
+
+.fav-list .fav-dish-image img {
   width: 100%;
-  max-height: 200px;
+  height: 100%;
   object-fit: cover;
   border-radius: 5px;
 }
 
-.fav-list h1,
-.fav-list h2,
-.fav-list h3 {
-  margin: 10px 0;
+.fav-list .fav-dish-info {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px;
 }
 
 .favlist-edit {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
+  margin: 0.5rem 0;
 }
 
-.delete-icon {
+.favlist-edit svg{
   cursor: pointer;
-  color: #ff0000;
-  transition: color 0.3s ease-in-out;
 }
 
-.delete-icon:hover {
-  color: #c50000;
+.favlist-edit svg:hover{
+  color: red;
 }
+
+.fav .no-fav {
+  background-image: url("images/No-fav.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 500px;
+  width: 500px;
+}
+
+.fav-dish-info h1{
+  color: brown;
+  margin: 0.5rem 0;
+}
+/* Responsive Styling */
+
+
+/* Hover Effects */
+
+.favlist-edit a,
+.favlist-edit button {
+  padding: 5px 10px;
+  border-radius: 5px;
+  background-color: #e8e8e8;
+  transition: background-color 0.3s ease;
+}
+
+.favlist-edit a:hover,
+.favlist-edit button:hover {
+  background-color: #d4d4d4;
+}
+
+.favlist-edit button {
+  border: none;
+  cursor: pointer;
+}
+
 
 .recipe-button {
   background-color: #4caf50;
@@ -720,13 +767,6 @@ button.cta a {
   background-color: #45a049;
 }
 
-.fav .no-fav{
-  background-image: url("images/No-fav.png");
-  background-repeat: no-repeat;
-  background-size: contain;
-  height: 500px;
-  width: 500px;
-}
 
 
 
