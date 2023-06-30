@@ -1125,6 +1125,10 @@ button.cta a {
     width: 100%;
     margin: 0.5rem 0;
   }
+
+  .recipe-detail {
+    padding: 20px 5px;
+  }
 }
 
 
@@ -1139,6 +1143,9 @@ button.cta a {
 
   .recipe-ingredients .detail h1 {
     font-size: 1.5rem;
+  }
+  .recipe-detail .ingredients {
+    margin: 1rem 0;
   }
 
 }
