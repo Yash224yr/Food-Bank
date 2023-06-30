@@ -49,17 +49,15 @@ function GetList() {
               <div className='dish-key' key={index}>
                 <img src={meal.strMealThumb} alt="" />
                 <div className='dish-receipe' >
-                  <h1>{meal.strMeal} </h1>
-
+                  <h1 >  <Link to={`/receipe/${meal.idMeal}`}  >{meal.strMeal} </Link></h1>
                   {
                     favlist.includes(meal.idMeal) ? (
-                      <FavoriteSharpIcon   className='unlike'  onClick={() => { handlerdelete(meal.idMeal) }} ></FavoriteSharpIcon>
+                      <FavoriteSharpIcon className='unlike' onClick={() => { handlerdelete(meal.idMeal) }} ></FavoriteSharpIcon>
                     ) : (
-                      <FavoriteBorderIcon   className='like'  onClick={() => { handlerfav(meal.idMeal) }}  ></FavoriteBorderIcon>
+                      <FavoriteBorderIcon className='like' onClick={() => { handlerfav(meal.idMeal) }}  ></FavoriteBorderIcon>
                     )
                   }
                 </div>
-                <button onClick={() => getRecipe(meal.idMeal)} >  <Link to={`/receipe/${meal.idMeal}`}  > Get Receipe</Link></button>
               </div>
             )
           })

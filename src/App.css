@@ -63,7 +63,7 @@ main {
 }
  
 .header a,
-button {
+.header button {
   cursor: pointer;
   user-select: none;
   border: none;
@@ -982,6 +982,24 @@ button {
   padding: 1rem 4rem;
 }
 
+.dish p{
+  margin-bottom: 1rem;
+  padding: 0 5rem;
+}
+
+.random-quote {
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.quote-text {
+  font-style: italic;
+  font-size: 18px;
+  color: #333;
+}
+
+
+
 .dish-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -1000,30 +1018,61 @@ button {
   height: 100%;
 }
 
+.dish-key:hover .dish-receipe {
+  height: 19%;
+}
+
+
 .dish-key img {
   height: 100%;
   width: 100%;
   object-fit: cover;
+  cursor: pointer;
+  transition: 0.5s ease;
+}
+
+.dish-key:hover img{
+  transform: scale(1.1)
 }
 
 .dish-receipe{
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 20%;
+  height: 18%;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: rgba(0, 0, 0, 0.7);
+  transition: 0.5s ease;
 }
 
+
+
+.dish-receipe:hover .dish-key img{
+  transform: scale(1.25);
+}
+
+.dish-key:hover h1 a{
+  color: brown;
+  font-size: 1.1rem;
+}
+
+
 .dish-receipe h1 {
-  color: white;
   font-size: 1rem;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
   width: 80%;
+  cursor: pointer;
+}
+
+
+
+.dish-receipe h1 a{
+  color: white;
+  transition: 0.5s ease;
 }
 
 .like {
