@@ -1012,6 +1012,11 @@ button.cta a {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     padding: 0 2rem;
   }
+
+  .dish-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
 }
 
 @media all and (max-width:769px) {
@@ -1053,6 +1058,15 @@ button.cta a {
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     padding: 0 1rem;
   }
+
+  .dish-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+
+  .dish {
+    padding: 1rem 0.5rem;
+  }
 }
 
 
@@ -1090,5 +1104,13 @@ button.cta a {
 
   .home-image h2 {
     width: 100%;
+  }
+}
+
+@media all and (max-width:320px) {
+
+  .dish-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   }
 }
