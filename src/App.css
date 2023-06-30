@@ -661,162 +661,65 @@ button.cta a {
   width: 100%;
 }
 
-
-
-
 .fav {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
-  padding: 1rem 4rem;
 }
 
 .fav-list {
   width: 300px;
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
-  overflow: hidden;
+  margin: 20px;
+  padding: 10px;
+  background-color: #e8e8e8;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 
 .fav-list img {
   width: 100%;
-  height: auto;
+  max-height: 200px;
   object-fit: cover;
+  border-radius: 5px;
 }
 
-.fav-list h1 {
-  margin: 10px;
-  font-size: 18px;
-  font-weight: bolder;
-  color: brown;
-}
-
+.fav-list h1,
 .fav-list h2,
 .fav-list h3 {
-  margin: 10px;
+  margin: 10px 0;
 }
 
 .favlist-edit {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
 }
 
-.noselect {
-  width: 150px;
-  height: 50px;
+.delete-icon {
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  background: red;
+  color: #ff0000;
+  transition: color 0.3s ease-in-out;
+}
+
+.delete-icon:hover {
+  color: #c50000;
+}
+
+.recipe-button {
+  background-color: #4caf50;
+  color: #ffffff;
   border: none;
+  padding: 8px 16px;
   border-radius: 5px;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
-  background: #b51717f2;
+  text-decoration: none;
+  transition: background-color 0.3s ease-in-out;
 }
 
-.noselect,
-.noselect span {
-  transition: 200ms;
+.recipe-button:hover {
+  background-color: #45a049;
 }
 
-.noselect .text {
-  transform: translateX(35px);
-  color: white;
-  font-weight: bold;
-}
-
-.noselect .icon {
-  position: absolute;
-  border-left: 1px solid #a71c1c;
-  transform: translateX(110px);
-  height: 40px;
-  width: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.noselect svg {
-  width: 15px;
-  fill: #eee;
-}
-
-.noselect:hover {
-  background: #ff3636;
-}
-
-.noselect:hover .text {
-  color: transparent;
-}
-
-.noselect:hover .icon {
-  width: 150px;
-  border-left: none;
-  transform: translateX(0);
-}
-
-.noselect:focus {
-  outline: none;
-}
-
-.noselectactive .icon svg {
-  transform: scale(0.8);
-}
-
-.fav-receipe {
-  padding: 15px;
-  border: unset;
-  border-radius: 15px;
-  color: #212121;
-  z-index: 1;
-  background: #e8e8e8;
-  position: relative;
-  font-weight: 1000;
-  font-size: 17px;
-  -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
-  box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
-  transition: all 250ms;
-  overflow: hidden;
-}
-
-.fav-receipe a {
-  color: #212121;
-}
-
-.fav-receipe::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 0;
-  border-radius: 15px;
-  background-color: #212121;
-  z-index: -1;
-  -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
-  box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
-  transition: all 250ms;
-}
-
-.fav-receipe:hover a {
-  color: #e8e8e8;
-}
-
-.fav-receipe:hover::before {
-  width: 100%;
-}
-
-.fav .no-fav {
-  background-image: url("images/No-fav.png");
-  background-repeat: no-repeat;
-  background-size: contain;
-  height: 500px;
-  width: 500px;
-}
 
 
 
@@ -1147,7 +1050,7 @@ button.cta a {
   }
 
   .categories-list {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     padding: 0 1rem;
   }
 }

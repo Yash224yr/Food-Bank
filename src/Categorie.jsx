@@ -47,7 +47,7 @@ function Categorie() {
               }}
             >
               <span>
-                <Link to={`/list/${meal.strCategory}`}>Discover Recipes</Link>
+                <Link to={`/list/${meal.strCategory}`}>Recipes</Link>
               </span>
               <svg viewBox="0 0 13 10" height="10px" width="15px">
                 <path d="M1,5 L11,5"></path>
