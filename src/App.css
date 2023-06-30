@@ -720,6 +720,14 @@ button.cta a {
   background-color: #45a049;
 }
 
+.fav .no-fav{
+  background-image: url("images/No-fav.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 500px;
+  width: 500px;
+}
+
 
 
 

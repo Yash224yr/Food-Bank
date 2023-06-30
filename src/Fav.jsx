@@ -44,9 +44,6 @@ function Fav() {
             <h2>{meal.strCategory}</h2>
             <h3>{meal.strArea}</h3>
             <div className='favlist-edit'>
-              
-  
-
               <DeleteIcon onClick={() => handlerdelete(index)} ></DeleteIcon>
               <Link to={`/receipe/${meal.idMeal}`}>Recipe</Link>
               <button></button>
