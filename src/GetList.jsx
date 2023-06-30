@@ -3,6 +3,7 @@ import axios from 'axios'
 import { Link, useParams } from 'react-router-dom'
 import { mealcontext } from './App'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import FavoriteSharpIcon from '@mui/icons-material/FavoriteSharp';
 
 
 
@@ -31,6 +32,11 @@ function GetList() {
     }
   }
 
+  function handlerdelete(mealId) {
+    setFavList(favlist.filter((meal) => meal !== mealId));
+  }
+
+
 
 
   return (
@@ -43,10 +49,17 @@ function GetList() {
               <div className='dish-key' key={index}>
                 <img src={meal.strMealThumb} alt="" />
                 <div className='dish-receipe' >
-                  <Link className='gotoreceipe'  >{meal.strMeal} </Link>
-                  <button onClick={() => { handlerfav(meal.idMeal) }} ><FavoriteBorderIcon /></button>
-                  <button  onClick={() => getRecipe(meal.idMeal)} >  <Link  to={`/receipe/${meal.idMeal}`}  > Get Receipe</Link></button>
+                  <h1>{meal.strMeal} </h1>
+
+                  {
+                    favlist.includes(meal.idMeal) ? (
+                      <FavoriteSharpIcon   className='unlike'  onClick={() => { handlerdelete(meal.idMeal) }} ></FavoriteSharpIcon>
+                    ) : (
+                      <FavoriteBorderIcon   className='like'  onClick={() => { handlerfav(meal.idMeal) }}  ></FavoriteBorderIcon>
+                    )
+                  }
                 </div>
+                <button onClick={() => getRecipe(meal.idMeal)} >  <Link to={`/receipe/${meal.idMeal}`}  > Get Receipe</Link></button>
               </div>
             )
           })
