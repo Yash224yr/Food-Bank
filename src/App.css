@@ -6,6 +6,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Signika', sans-serif;
+  scroll-behavior: smooth;
 }
 
 :root {
@@ -49,12 +50,6 @@
   text-rendering: optimizeLegibility;
 }
 
-html {
-  font-size: 100%;
-  box-sizing: inherit;
-  scroll-behavior: smooth;
-  height: -webkit-fill-available;
-}
 
 
 
@@ -376,7 +371,7 @@ main {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-  height: 70vh;
+  height: 500px;
   position: relative;
 }
 
@@ -1101,6 +1096,14 @@ button.cta a {
   .recipe-detail {
     width: 90%;
   }
+
+  .home-image {
+    height: 450px;
+  }
+
+  .home-image h1 {
+    width: 90%;
+  }
 }
 
 @media all and (max-width:769px) {
@@ -1129,6 +1132,14 @@ button.cta a {
   .recipe-detail {
     padding: 20px 5px;
   }
+
+  .home-image {
+    height: 400px;
+  }
+
+  .home-image h2 {
+    top: 51%;
+  }
 }
 
 
@@ -1153,7 +1164,16 @@ button.cta a {
     width: 100%;
   }
 
-  .recipe-list{
+  .recipe-list {  
     margin: 0;
+  }
+
+  .home-image h1 {
+    width: 100%;
+    font-size: 1.5rem;
+  }
+
+  .home-image h2 {
+    width: 100%;
   }
 }
