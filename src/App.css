@@ -1114,14 +1114,14 @@ button.cta a {
   .recipe-ingredients .image {
     width: 90%;
     height: 260px;
-}
+  }
 
-  .recipe-ingredients .image img{
+  .recipe-ingredients .image img {
     width: 100%;
     height: 100%;
   }
 
-  .recipe-ingredients .detail{
+  .recipe-ingredients .detail {
     width: 100%;
     margin: 0.5rem 0;
   }
@@ -1132,20 +1132,28 @@ button.cta a {
 }
 
 
-@media all and (max-width:480px){
+@media all and (max-width:480px) {
 
 
-  .recipe-ingredients .image img{
+  .recipe-ingredients .image img {
     width: 100%;
     height: 100%;
   }
- 
+
 
   .recipe-ingredients .detail h1 {
     font-size: 1.5rem;
   }
+
   .recipe-detail .ingredients {
     margin: 1rem 0;
   }
 
+  .recipe-detail {
+    width: 100%;
+  }
+
+  .recipe-list{
+    margin: 0;
+  }
 }
