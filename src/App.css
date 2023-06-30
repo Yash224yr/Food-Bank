@@ -426,6 +426,7 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
 .home-image button svg{
@@ -574,6 +575,7 @@ main {
   justify-content: center;
   align-items: center;
   margin-bottom: 20px;
+  cursor: pointer;
  }
  
  .cta:before {
@@ -984,7 +986,6 @@ main {
 
 .dish p{
   margin-bottom: 1rem;
-  padding: 0 5rem;
 }
 
 .random-quote {
