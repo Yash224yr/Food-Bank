@@ -72,7 +72,7 @@ function Header() {
               <Link to="/ingre" >Ingredients</Link>
             </li>
             <li className="menu-item">
-              <Link to="/area" >Regional Dishes</Link>
+              <Link to="/area" >Regional</Link>
             </li>
             <li className="menu-item">
               <Link to="/fav">Favorite</Link>

@@ -61,7 +61,7 @@ html {
 main {
   overflow: hidden;
 }
- 
+
 .header a,
 .header button {
   cursor: pointer;
@@ -73,7 +73,7 @@ main {
   color: black;
 }
 
-.header  img,
+.header img,
 .header video {
   display: block;
   max-width: 100%;
@@ -429,7 +429,7 @@ main {
   cursor: pointer;
 }
 
-.home-image button svg{
+.home-image button svg {
   margin-left: 5px;
 }
 
@@ -513,7 +513,7 @@ main {
   position: relative;
 }
 
-.category-item-ingre{
+.category-item-ingre {
   margin-top: 20px;
   position: relative;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
@@ -522,7 +522,7 @@ main {
   position: relative;
 }
 
-.imggoto  {
+.imggoto {
   width: 100%;
   object-fit: cover;
   margin-top: 20px;
@@ -576,9 +576,9 @@ main {
   align-items: center;
   margin-bottom: 20px;
   cursor: pointer;
- }
- 
- .cta:before {
+}
+
+.cta:before {
   content: "";
   position: absolute;
   top: 0;
@@ -589,18 +589,18 @@ main {
   width: 45px;
   height: 45px;
   transition: all 0.3s ease;
- }
- 
- .cta span {
+}
+
+.cta span {
   position: relative;
   font-family: "Ubuntu", sans-serif;
   font-size: 18px;
   font-weight: 700;
   letter-spacing: 0.05em;
   color: brown;
- }
- 
- .cta svg {
+}
+
+.cta svg {
   position: relative;
   top: 0;
   margin-left: 10px;
@@ -611,22 +611,22 @@ main {
   stroke-width: 2;
   transform: translateX(-5px);
   transition: all 0.3s ease;
- }
- 
- .cta:hover:before {
+}
+
+.cta:hover:before {
   width: 100%;
   background: #b1dae7;
- }
- 
- .cta:hover svg {
-  transform: translateX(0);
- }
- 
- .cta:active {
-  transform: scale(0.95);
- }
+}
 
- button.cta a {
+.cta:hover svg {
+  transform: translateX(0);
+}
+
+.cta:active {
+  transform: scale(0.95);
+}
+
+button.cta a {
   color: brown;
 }
 
@@ -691,7 +691,7 @@ main {
   object-fit: cover;
 }
 
-.fav-list h1{
+.fav-list h1 {
   margin: 10px;
   font-size: 18px;
   font-weight: bolder;
@@ -788,7 +788,7 @@ main {
   overflow: hidden;
 }
 
-.fav-receipe a{
+.fav-receipe a {
   color: #212121;
 }
 
@@ -807,7 +807,7 @@ main {
   transition: all 250ms;
 }
 
-.fav-receipe:hover a{
+.fav-receipe:hover a {
   color: #e8e8e8;
 }
 
@@ -815,7 +815,7 @@ main {
   width: 100%;
 }
 
-.fav .no-fav{
+.fav .no-fav {
   background-image: url("images/No-fav.png");
   background-repeat: no-repeat;
   background-size: contain;
@@ -984,7 +984,7 @@ main {
   padding: 1rem 4rem;
 }
 
-.dish p{
+.dish p {
   margin-bottom: 1rem;
 }
 
@@ -1032,11 +1032,11 @@ main {
   transition: 0.5s ease;
 }
 
-.dish-key:hover img{
+.dish-key:hover img {
   transform: scale(1.1)
 }
 
-.dish-receipe{
+.dish-receipe {
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -1050,11 +1050,11 @@ main {
 
 
 
-.dish-receipe:hover .dish-key img{
+.dish-receipe:hover .dish-key img {
   transform: scale(1.25);
 }
 
-.dish-key:hover h1 a{
+.dish-key:hover h1 a {
   color: brown;
   font-size: 1.1rem;
 }
@@ -1071,7 +1071,7 @@ main {
 
 
 
-.dish-receipe h1 a{
+.dish-receipe h1 a {
   color: white;
   transition: 0.5s ease;
 }
@@ -1089,3 +1089,50 @@ main {
   cursor: pointer;
 }
 
+
+
+
+
+
+
+
+
+@media all and (max-width:950px) {
+  .recipe-detail {
+    width: 90%;
+  }
+}
+
+@media all and (max-width:769px) {
+
+  .recipe-ingredients {
+    flex-direction: column;
+    justify-content: start;
+    height: 500px;
+  }
+
+  .recipe-ingredients .image {
+    width: 100%;
+    height: 60%;
+  }
+  .recipe-ingredients .detail{
+    width: 100%;
+    height: 40%;
+    margin-top: 1rem;
+  }
+}
+
+
+@media all and (max-width:480px){
+  .recipe-ingredients{
+    height: 300px;
+  }
+  .recipe-ingredients .detail{
+    margin: 1rem 0;
+  }
+
+  .recipe-ingredients .detail h1 {
+    font-size: 1.5rem;
+  }
+
+}
