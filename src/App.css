@@ -1108,24 +1108,36 @@ button.cta a {
   .recipe-ingredients {
     flex-direction: column;
     justify-content: start;
-    height: 500px;
+    height: auto;
   }
 
   .recipe-ingredients .image {
+    width: 90%;
+    height: 260px;
+}
+
+  .recipe-ingredients .image img{
     width: 100%;
-    height: 60%;
+    height: 100%;
   }
+
   .recipe-ingredients .detail{
     width: 100%;
-    height: 40%;
-    margin-top: 1rem;
+    margin: 0.5rem 0;
   }
 }
 
 
 @media all and (max-width:480px){
+
+
+
   .recipe-ingredients{
-    height: 350px;
+    height: 400px;
+  }
+
+  .recipe-ingredients .image img{
+    width: 100%;
   }
  
 
