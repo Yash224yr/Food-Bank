@@ -61,7 +61,7 @@ function Ingre() {
                             <img className='imggoto' src={`https://www.themealdb.com/images/ingredients/${meal.strIngredient}.png`} alt="" />
                             <h1 className='goto'>{meal.strIngredient}</h1>
                             <button className="cta" onClick={(e) => getingremeal(e, meal.strIngredient)}>
-                                <span>Discover Recipes</span>
+                                <span>Recipes</span>
                                 <svg viewBox="0 0 13 10" height="10px" width="15px">
                                     <path d="M1,5 L11,5"></path>
                                     <polyline points="8 1 12 5 8 9"></polyline>
