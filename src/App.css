@@ -907,6 +907,14 @@ button.cta a {
   align-items: center;
   margin: 0 auto;
 }
+.area-dish-list{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 20px;
+  justify-items: center;
+  align-items: center;
+  margin: 0 4rem;
+}
 
 .dish-key {
   position: relative;
@@ -1017,6 +1025,13 @@ button.cta a {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   }
+  .area-dish-list{
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    margin: 0 2rem;
+  }
+  .select-area select {
+    width: 28%;
+  }
 }
 
 @media all and (max-width:769px) {
@@ -1067,6 +1082,13 @@ button.cta a {
   .dish {
     padding: 1rem 0.5rem;
   }
+  .area-dish-list{
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    margin: 0 0.5rem;
+  }
+  .select-area select {
+    width: 48%;
+  }
 }
 
 
@@ -1105,12 +1127,18 @@ button.cta a {
   .home-image h2 {
     width: 100%;
   }
+  .select-area select {
+    width: 58%;
+  }
 }
 
 @media all and (max-width:320px) {
 
   .dish-list {
     display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  }
+  .area-dish-list{
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   }
 }
