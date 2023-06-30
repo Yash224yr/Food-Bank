@@ -1125,11 +1125,9 @@ button.cta a {
 
 @media all and (max-width:480px){
   .recipe-ingredients{
-    height: 300px;
+    height: 350px;
   }
-  .recipe-ingredients .detail{
-    margin: 1rem 0;
-  }
+ 
 
   .recipe-ingredients .detail h1 {
     font-size: 1.5rem;
