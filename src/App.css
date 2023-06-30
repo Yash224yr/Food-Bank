@@ -1104,6 +1104,11 @@ button.cta a {
   .home-image h1 {
     width: 90%;
   }
+
+  .categories-list {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    padding: 0 2rem;
+  }
 }
 
 @media all and (max-width:769px) {
@@ -1140,7 +1145,14 @@ button.cta a {
   .home-image h2 {
     top: 51%;
   }
+
+  .categories-list {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    padding: 0 1rem;
+  }
 }
+
+
 
 
 @media all and (max-width:480px) {
@@ -1164,12 +1176,12 @@ button.cta a {
     width: 100%;
   }
 
-  .recipe-list {  
+  .recipe-list {
     margin: 0;
   }
 
   .home-image h1 {
-    width: 100%;
+    width: 90%;
     font-size: 1.5rem;
   }
 
