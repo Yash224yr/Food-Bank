@@ -1294,9 +1294,7 @@ button.cta a {
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   padding: 0 2rem;
 }
-.explore-categories, .explore-regional, .explore-ingredients, .explore-random {
-  height: 200px;
-}
+
 }
 
 
