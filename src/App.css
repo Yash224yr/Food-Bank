@@ -1123,8 +1123,8 @@ button.cta a {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
   overflow: hidden;
-  width: 200px;
-  height: 200px;
+  width: 250px;
+  height: 250px;
   margin: 20px;
 }
 
@@ -1345,8 +1345,8 @@ button.cta a {
 }
 
 .area-dish-key{
-  width: 200px;
-  height: 200px;
+  width: 250px;
+  height: 180px;
   margin: 10px;
 }
 
@@ -1400,11 +1400,7 @@ button.cta a {
     
   }
   
-  .area-dish-key{
-    width: 150px;
-    height: 150px;
-    margin: 5px;
-  }
+  
   
 }
 
@@ -1416,10 +1412,6 @@ button.cta a {
   }
  
   
-  .area-dish-key{
-    width: 100px;
-    height: 100px;
-    margin: 5px;
-  }
+ 
  
 }
