@@ -505,7 +505,7 @@ color: #212121;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
-  padding: 0 4rem;
+  padding: 1rem 4rem;
 }
 
 .category-item {
@@ -1043,6 +1043,7 @@ button.cta a {
   justify-items: center;
   align-items: center;
   margin: 0 auto;
+  padding: 1rem 4rem;
 }
 
 
@@ -1248,9 +1249,12 @@ button.cta a {
     padding: 0 2rem;
   }
 
+  
+
   .dish-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    padding:  0 2rem;
   }
   .select-area select {
     width: 28%;
@@ -1307,12 +1311,14 @@ button.cta a {
 
   .categories-list {
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    padding: 0 1rem;
+    padding: 1rem;
   }
+
 
   .dish-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    padding: 1rem;
   }
 
   .dish {

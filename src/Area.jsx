@@ -99,7 +99,7 @@ function Area() {
         <div className="circle"></div>
       </div>
       ) : (
-        <div className='area-dish-list'>
+        <div className='dish-list'>
           {arealist.map((meal, index) => {
             return (
               <div className='dish-key' key={index}>
