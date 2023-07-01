@@ -723,6 +723,7 @@ button.cta a {
   background-size: contain;
   height: 500px;
   width: 500px;
+  margin: 0 auto;
 }
 
 .fav-dish-info h1{
@@ -977,17 +978,16 @@ button.cta a {
   height: 19%;
 }
 
-
 .dish-key img {
   height: 100%;
   width: 100%;
   object-fit: cover;
   cursor: pointer;
-  transition: 0.5s ease;
+  transition: transform 0.3s ease;
 }
 
 .dish-key:hover img {
-  transform: scale(1.1)
+  transform: scale(1.1);
 }
 
 .dish-receipe {
@@ -999,20 +999,17 @@ button.cta a {
   justify-content: center;
   align-items: center;
   background-color: rgba(0, 0, 0, 0.7);
-  transition: 0.5s ease;
+  transition: height 0.3s ease;
 }
-
-
 
 .dish-receipe:hover .dish-key img {
   transform: scale(1.25);
 }
 
 .dish-key:hover h1 a {
-  color: brown;
+  color: #ADD8E6;
   font-size: 1.1rem;
 }
-
 
 .dish-receipe h1 {
   font-size: 1rem;
@@ -1023,11 +1020,9 @@ button.cta a {
   cursor: pointer;
 }
 
-
-
 .dish-receipe h1 a {
   color: white;
-  transition: 0.5s ease;
+  transition: color 0.3s ease;
 }
 
 .like {
@@ -1042,9 +1037,6 @@ button.cta a {
   transition: color 0.3s ease-in-out;
   cursor: pointer;
 }
-
-
-
 
 
 
