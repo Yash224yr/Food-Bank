@@ -38,7 +38,7 @@ function Fav() {
       {favlist.length === 0 && <div className='no-fav'></div>}
       {favlist &&
         fav.map((meal, index) => (
-          <div key={index} className='fav-list'>
+          <div key={index} className='fav-item'>
             <div className='fav-dish-image' >
 
             <img src={meal.strMealThumb} alt='' />
