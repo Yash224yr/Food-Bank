@@ -52,18 +52,18 @@ function Ingredients() {
     <div className='search-meal'>
       {loading ? (
         <div class="loader">
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-    </div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+        </div>
       ) : error ? (
         <div className='error'></div>
       ) : (
-        <div className='dish-list'>
+        <div className='area-dish-list'>
           {meal.map((meal, index) => {
             return (
-              <div className='dish-key' key={index}>
+              <div className='area-dish-key' key={index}>
                 <img src={meal.strMealThumb} alt='' />
                 <div className='dish-receipe'>
                   <h1>

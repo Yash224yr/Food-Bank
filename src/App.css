@@ -1044,14 +1044,7 @@ button.cta a {
   align-items: center;
   margin: 0 auto;
 }
-.area-dish-list{
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  grid-gap: 20px;
-  justify-items: center;
-  align-items: center;
-  margin: 0 4rem;
-}
+
 
 .dish-key {
   position: relative;
@@ -1061,6 +1054,8 @@ button.cta a {
   width: 100%;
   height: 100%;
 }
+
+
 
 .dish-key:hover .dish-receipe {
   height: 19%;
@@ -1111,6 +1106,47 @@ button.cta a {
 .dish-receipe h1 a {
   color: white;
   transition: color 0.3s ease;
+}
+
+
+.area-dish-list{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 4rem;
+  flex-wrap: wrap;
+}
+
+.area-dish-key{
+  position: relative;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  overflow: hidden;
+  width: 200px;
+  height: 200px;
+  margin: 20px;
+}
+
+.area-dish-key img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+
+.area-dish-key:hover img {
+  transform: scale(1.1);
+}
+
+.area-dish-key:hover .dish-receipe {
+  height: 19%;
+}
+
+.area-dish-key:hover h1 a {
+  color: #ADD8E6;
+  font-size: 1.1rem;
 }
 
 .like {
@@ -1216,15 +1252,21 @@ button.cta a {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   }
-  .area-dish-list{
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    margin: 0 2rem;
-  }
   .select-area select {
     width: 28%;
   }
   .fav{
     padding: 0 1rem;
+  }
+  .area-dish-list{
+    padding: 1rem 2rem;
+    
+  }
+  
+  .area-dish-key{
+    width: 200px;
+    height: 200px;
+    margin: 20px;
   }
 }
 
@@ -1276,10 +1318,6 @@ button.cta a {
   .dish {
     padding: 1rem 0.5rem;
   }
-  .area-dish-list{
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    margin: 0 0.5rem;
-  }
   .select-area select {
     width: 48%;
   }
@@ -1287,12 +1325,23 @@ button.cta a {
     font-size: 1rem;
 }
 .Explore-recipe{
-  margin-top: 3rem;
+  margin-top: 3rem 1rem;
 }
 .Explore-recipe {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   padding: 0 2rem;
+}
+
+.area-dish-list{
+  padding: 1rem 1rem;
+  
+}
+
+.area-dish-key{
+  width: 200px;
+  height: 200px;
+  margin: 10px;
 }
 
 }
@@ -1340,6 +1389,17 @@ button.cta a {
   {
     margin-top: 1rem;
   }
+  .area-dish-list{
+    padding: 1rem 0.5rem;
+    
+  }
+  
+  .area-dish-key{
+    width: 150px;
+    height: 150px;
+    margin: 5px;
+  }
+  
 }
 
 @media all and (max-width:320px) {
@@ -1348,7 +1408,12 @@ button.cta a {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   }
-  .area-dish-list{
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+ 
+  
+  .area-dish-key{
+    width: 100px;
+    height: 100px;
+    margin: 5px;
   }
+ 
 }
