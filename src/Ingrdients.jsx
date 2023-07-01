@@ -60,10 +60,10 @@ function Ingredients() {
       ) : error ? (
         <div className='error'></div>
       ) : (
-        <div className='dish-list'>
+        <div className='search-dish-list'>
           {meal.map((meal, index) => {
             return (
-              <div className='dish-key' key={index}>
+              <div className='search-dish-key' key={index}>
                 <img src={meal.strMealThumb} alt='' />
                 <div className='dish-receipe'>
                   <h1>

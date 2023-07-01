@@ -1024,6 +1024,43 @@ button.cta a {
 }
 
 
+/* Search Dish */
+
+.search-meal{
+  padding: 1rem 4rem;
+}
+
+.search-dish-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.search-dish-key {
+  position: relative;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  overflow: hidden;
+  width: 200px;
+  height: 200px;
+  margin: 0.5rem;
+
+}
+
+.search-dish-key img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+
+
+
+
 
 .dish-list {
   display: grid;
@@ -1042,6 +1079,8 @@ button.cta a {
   margin: 0 4rem;
 }
 
+
+
 .dish-key {
   position: relative;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
@@ -1050,6 +1089,8 @@ button.cta a {
   width: 100%;
   height: 100%;
 }
+
+
 
 .dish-key:hover .dish-receipe {
   height: 19%;
@@ -1206,6 +1247,12 @@ button.cta a {
   .select-area select {
     width: 48%;
   }
+
+  .search-meal{
+    padding: 1rem 1rem;
+  }
+
+
 }
 
 
@@ -1247,6 +1294,25 @@ button.cta a {
   .select-area select {
     width: 58%;
   }
+
+  .search-meal{
+    padding: 1rem 0.5rem;
+  }
+
+  .search-dish-key {
+    position: relative;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    overflow: hidden;
+    width: 150px;
+    height: 150px;
+    margin: 0.5rem;
+  }
+
+
+
+
+
 }
 
 @media all and (max-width:320px) {
@@ -1258,4 +1324,20 @@ button.cta a {
   .area-dish-list{
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   }
+
+  
+  .search-meal{
+    padding: 1rem 0;
+  }
+
+  .search-dish-key {
+    position: relative;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    overflow: hidden;
+    width: 120px;
+    height: 120px;
+    margin: 0.5rem;
+  }
+
 }
