@@ -1132,9 +1132,8 @@ button.cta a {
   justify-content: center;
   align-items: center;
   gap: 20px;
-  height: 90vh;
-  padding: 20px;
-  background-color: #f2f2f2;
+  margin-top: 5rem;
+  /* background-color: #f2f2f2; */
 }
 
 .explore-categories,
@@ -1289,6 +1288,9 @@ button.cta a {
   .fav-dish-info h1 {
     font-size: 1rem;
 }
+.Explore-recipe{
+  margin-top: 3rem;
+}
 }
 
 
@@ -1329,6 +1331,10 @@ button.cta a {
   }
   .select-area select {
     width: 58%;
+  }
+  .Explore-recipe 
+  {
+    margin-top: 1rem;
   }
 }
 
