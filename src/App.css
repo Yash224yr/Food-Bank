@@ -580,10 +580,11 @@ main {
   left: 0;
   display: block;
   border-radius: 50px;
-  background: #b1dae7;
+  background: rgba(36, 104, 172, 0.502) ; /* Change to a deep blue color */
   width: 45px;
   height: 45px;
   transition: all 0.3s ease;
+  z-index: -1;
 }
 
 .cta span {
@@ -592,7 +593,7 @@ main {
   font-size: 18px;
   font-weight: 700;
   letter-spacing: 0.05em;
-  color: brown;
+  color: #ffffff; /* Change to white color */
 }
 
 .cta svg {
@@ -602,7 +603,7 @@ main {
   fill: none;
   stroke-linecap: round;
   stroke-linejoin: round;
-  stroke: brown;
+  stroke: rgba(51, 102, 153, 1); /* Change to white color */
   stroke-width: 2;
   transform: translateX(-5px);
   transition: all 0.3s ease;
@@ -610,11 +611,16 @@ main {
 
 .cta:hover:before {
   width: 100%;
-  background: #b1dae7;
+  background: #004466; /* Change to a darker shade of blue for hover effect */
+}
+
+.cta:hover a{
+  color: white;
 }
 
 .cta:hover svg {
   transform: translateX(0);
+  stroke: white;
 }
 
 .cta:active {
@@ -622,8 +628,9 @@ main {
 }
 
 button.cta a {
-  color: brown;
+  color: #336699; /* Change to a deep blue color */
 }
+
 
 .load-more-button {
   position: relative;
@@ -662,11 +669,12 @@ button.cta a {
 }
 
 .fav {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   padding: 0 4rem;
 }
+
 
 .fav-list {
   width: 100%;

@@ -3,12 +3,15 @@ import React, { useContext, useEffect, useState } from 'react';
 import { mealcontext } from './App';
 import { Link } from 'react-router-dom';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import FavoriteSharpIcon from '@mui/icons-material/FavoriteSharp';
 
 
 function Ingredients() {
   const { search, setSearch } = useContext(mealcontext);
   const [meal, setMeal] = useState([]);
   const [error, setError] = useState('');
+  const { favlist, setFavList } = useContext(mealcontext)
+
 
   useEffect(() => {
     axios
@@ -31,31 +34,49 @@ function Ingredients() {
     setReceipe(meal);
   }
 
-  function handleSubmit(e) {
-    e.preventDefault();
-    setSearch(input);
+
+  function handlerfav(meal) {
+    if (!favlist.includes(meal)) {
+      setFavList([...favlist, meal])
+    }
   }
+
+
+  function handlerdelete(mealId) {
+    setFavList(favlist.filter((meal) => meal !== mealId));
+  }
+
+
+
 
   return (
     <div className='search-meal'>
 
-  
+
       {error ? (
         <div className='error'>
 
         </div>
       ) : (
 
-        <div className='area-list'>
+
+        <div className='dish-list'>
           {
             meal.map((meal, index) => {
               return (
-                <div className='area-dish' key={index}>
+                <div className='dish-key' key={index}>
                   <img src={meal.strMealThumb} alt="" />
-                  <Link className='gotoreceipe' to={`/receipe/${meal.idMeal}`} onClick={() => getRecipe(meal.idMeal)}>{meal.strMeal} </Link>
-                  <h1><Link to="/fav" ><FavoriteBorderIcon /></Link></h1>
+                  <div className='dish-receipe' >
+                    <h1 >  <Link to={`/receipe/${meal.idMeal}`}  >{meal.strMeal} </Link></h1>
+                    {
+                      favlist.includes(meal.idMeal) ? (
+                        <FavoriteSharpIcon className='unlike' onClick={() => { handlerdelete(meal.idMeal) }} ></FavoriteSharpIcon>
+                      ) : (
+                        <FavoriteBorderIcon className='like' onClick={() => { handlerfav(meal.idMeal) }}  ></FavoriteBorderIcon>
+                      )
+                    }
+                  </div>
                 </div>
-
               )
             })
           }
