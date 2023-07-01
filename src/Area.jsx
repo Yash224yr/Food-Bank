@@ -11,8 +11,8 @@ function Area() {
   const [list, setList] = useState('');
   const [arealist, setArealist] = useState([]);
   const [randomQuote, setRandomQuote] = useState('');
-  const { favlist, setFavList } = useContext(mealcontext)
-
+  const [loading, setLoading] = useState(true); // Loading state
+  const { favlist, setFavList } = useContext(mealcontext);
 
   useEffect(() => {
     axios
@@ -40,13 +40,17 @@ function Area() {
   }
 
   function submithandler() {
+    setLoading(true); // Start loading
+
     axios
       .get(`https://www.themealdb.com/api/json/v1/1/filter.php?a=${list}`)
       .then((result) => {
         setArealist(result.data.meals);
+        setLoading(false); // Stop loading
       })
       .catch((err) => {
         console.log(err);
+        setLoading(false); // Stop loading in case of an error
       });
   }
 
@@ -56,7 +60,7 @@ function Area() {
 
   function handlerfav(meal) {
     if (!favlist.includes(meal)) {
-      setFavList([...favlist, meal])
+      setFavList([...favlist, meal]);
     }
   }
 
@@ -64,21 +68,19 @@ function Area() {
     setFavList(favlist.filter((meal) => meal !== mealId));
   }
 
-
-
   return (
     <div className='area-container'>
       <div className='select-area'>
         <select value={list} onChange={(e) => submitchange(e)}>
-          <option disabled value="">
+          <option disabled value=''>
             Select the Region
           </option>
           {area
             ? area.map((meal, index) => (
-              <option key={index} value={meal.strArea}>
-                {meal.strArea}
-              </option>
-            ))
+                <option key={index} value={meal.strArea}>
+                  {meal.strArea}
+                </option>
+              ))
             : ''}
         </select>
         <button onClick={() => submithandler()}>
@@ -89,27 +91,44 @@ function Area() {
         <p>" {randomQuote} "</p>
       </div>
 
-      <div className='area-dish-list'>
-        {
-          arealist.map((meal, index) => {
+      {loading ? (
+        <div className="loader">
+        <div className="circle"></div>
+        <div className="circle"></div>
+        <div className="circle"></div>
+        <div className="circle"></div>
+      </div>
+      ) : (
+        <div className='area-dish-list'>
+          {arealist.map((meal, index) => {
             return (
               <div className='dish-key' key={index}>
-                <img src={meal.strMealThumb} alt="" />
-                <div className='dish-receipe' >
-                  <h1 >  <Link to={`/receipe/${meal.idMeal}`}  >{meal.strMeal} </Link></h1>
-                  {
-                    favlist.includes(meal.idMeal) ? (
-                      <FavoriteSharpIcon className='unlike' onClick={() => { handlerdelete(meal.idMeal) }} ></FavoriteSharpIcon>
-                    ) : (
-                      <FavoriteBorderIcon className='like' onClick={() => { handlerfav(meal.idMeal) }}  ></FavoriteBorderIcon>
-                    )
-                  }
+                <img src={meal.strMealThumb} alt='' />
+                <div className='dish-receipe'>
+                  <h1>
+                    <Link to={`/receipe/${meal.idMeal}`}>{meal.strMeal}</Link>
+                  </h1>
+                  {favlist.includes(meal.idMeal) ? (
+                    <FavoriteSharpIcon
+                      className='unlike'
+                      onClick={() => {
+                        handlerdelete(meal.idMeal);
+                      }}
+                    ></FavoriteSharpIcon>
+                  ) : (
+                    <FavoriteBorderIcon
+                      className='like'
+                      onClick={() => {
+                        handlerfav(meal.idMeal);
+                      }}
+                    ></FavoriteBorderIcon>
+                  )}
                 </div>
               </div>
-            )
-          })
-        }
-      </div>
+            );
+          })}
+        </div>
+      )}
     </div>
   );
 }

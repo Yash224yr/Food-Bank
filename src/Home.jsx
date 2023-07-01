@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import LocalDiningIcon from '@mui/icons-material/LocalDining';
+import { Link } from 'react-router-dom';
 
 
 function Home() {
 
-  const [count, setCount] = useState(0);
+    const [count, setCount] = useState(0);
 
 
 
@@ -31,7 +32,10 @@ function Home() {
             </h1>
             <h2>{Mealtext[count]}</h2>
             <button>
-                Explore <LocalDiningIcon />
+                <Link to="/explore" >
+                    Explore <LocalDiningIcon />
+
+                </Link>
                 <span></span>
             </button>
         </div>
