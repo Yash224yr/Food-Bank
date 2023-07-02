@@ -1,31 +1,40 @@
-import React, { useContext, useEffect, useState } from 'react'
-import axios from 'axios'
-import { Link, useParams } from 'react-router-dom'
-import { mealcontext } from './App'
+import React, { useContext, useEffect, useState } from 'react';
+import axios from 'axios';
+import { Link, useParams } from 'react-router-dom';
+import { mealcontext } from './App';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import FavoriteSharpIcon from '@mui/icons-material/FavoriteSharp';
 
 function GetList() {
-  const [list, getlist] = useState([])
-  const [loading, setLoading] = useState(true); // Added loading state
-  const { category } = useParams()
-  const { description, setDescription, favlist, setFavList } = useContext(mealcontext)
+  const [list, setList] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [showLoadMore, setShowLoadMore] = useState(false); // Added state for Load More button
+  const { category } = useParams();
+  const { description, setDescription, favlist, setFavList } = useContext(mealcontext);
+  const [visibleItems, setVisibleItems] = useState(20); // Number of items to be initially displayed
 
   useEffect(() => {
-    axios.get(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${category}`)
+    axios
+      .get(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${category}`)
       .then((result) => {
-        getlist(result.data.meals)
-        setLoading(false); // Set loading state to false once data is fetched
+        const mealList = result.data.meals || [];
+        setList(mealList);
+        setLoading(false);
+
+        // Check if the number of items exceeds 20
+        if (mealList.length > 20) {
+          setShowLoadMore(true);
+        }
       })
       .catch((err) => {
-        console.log(err)
-        setLoading(false); // Set loading state to false in case of error
-      })
-  }, [])
+        console.log(err);
+        setLoading(false);
+      });
+  }, []);
 
   function handlerfav(meal) {
     if (!favlist.includes(meal)) {
-      setFavList([...favlist, meal])
+      setFavList([...favlist, meal]);
     }
   }
 
@@ -33,21 +42,25 @@ function GetList() {
     setFavList(favlist.filter((meal) => meal !== mealId));
   }
 
+  function handleLoadMore() {
+    setVisibleItems((prevVisibleItems) => prevVisibleItems + 20);
+  }
+
   return (
     <div className='dish'>
       {description ? <p>{description}</p> : null}
-      {loading ? ( 
-         <div className="loader">
-         <div className="circle"></div>
-         <div className="circle"></div>
-         <div className="circle"></div>
-         <div className="circle"></div>
-       </div>
+      {loading ? (
+        <div className='loader'>
+          <div className='circle'></div>
+          <div className='circle'></div>
+          <div className='circle'></div>
+          <div className='circle'></div>
+        </div>
       ) : (
         <div className='dish-list'>
-          {list.map((meal, index) => (
+          {list.slice(0, visibleItems).map((meal, index) => (
             <div className='dish-key' key={index}>
-              <img src={meal.strMealThumb} alt="" />
+              <img src={meal.strMealThumb} alt='' />
               <div className='dish-receipe'>
                 <h1>
                   <Link to={`/receipe/${meal.idMeal}`}>{meal.strMeal}</Link>
@@ -70,10 +83,15 @@ function GetList() {
               </div>
             </div>
           ))}
+          {showLoadMore && visibleItems < list.length && (
+            <button className='load-more-button' onClick={handleLoadMore}>
+              Load More ...
+            </button>
+          )}
         </div>
       )}
     </div>
-  )
+  );
 }
 
 export default GetList;
