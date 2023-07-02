@@ -20,7 +20,7 @@ function Explore() {
     );
     const mealId = response.data.meals[0].idMeal;
     setRandomMealId(mealId);
-    navigate(`/recipe/${mealId}`);
+    navigate(`/receipe/${mealId}`);
   }
 
   return (
