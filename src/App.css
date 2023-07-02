@@ -1181,29 +1181,40 @@ button.cta a {
   align-items: center;
   justify-content: center;
   text-align: center;
-  background-color: #FFC107;
+  /* background-color: #FFC107; */
   color: #fff;
   border-radius: 8px;
   padding: 20px;
 }
 
+.explore-categories {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("./images/category.jpg") ;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 
 .explore-regional {
-  background-color: #E91E63;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("./images/regional.jpg") ;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .explore-ingredients {
-  background-color: #4CAF50;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("./images/Ingredient.jpg") ;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
-
 .explore-random {
-  background-color: #2196F3;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("./images/Random.jpg") ;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
  .Explore-recipe h1 {
   margin-bottom: 10px;
-  font-size: 20px;
-  color: #333; /* Change the text color here */
+  font-size: 23px;
+  color: #fff; /* Change the text color here */
   height: 33.33%;
 }
 
