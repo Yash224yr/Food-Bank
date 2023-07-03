@@ -78,7 +78,10 @@ function Ingre() {
                         if (index < visibleItems) {
                             return (
                                 <div className="dish-key" key={index}>
+                                    <Link   to={`/receipe/${meal.idMeal}`}  >
                                     <img src={meal.strMealThumb} alt="" />
+
+                                    </Link>
                                     <div className="dish-receipe">
                                         <h1>
                                             <Link to={`/receipe/${meal.idMeal}`}>{meal.strMeal}</Link>

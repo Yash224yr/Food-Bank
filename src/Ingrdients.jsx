@@ -51,11 +51,11 @@ function Ingredients() {
   return (
     <div className='search-meal'>
       {loading ? (
-        <div class="loader">
-          <div class="circle"></div>
-          <div class="circle"></div>
-          <div class="circle"></div>
-          <div class="circle"></div>
+        <div className="loader">
+          <div className="circle"></div>
+          <div className="circle"></div>
+          <div className="circle"></div>
+          <div className="circle"></div>
         </div>
       ) : error ? (
         <div className='error'></div>
@@ -64,7 +64,10 @@ function Ingredients() {
           {meal.map((meal, index) => {
             return (
               <div className='area-dish-key' key={index}>
+                <Link  to={`/receipe/${meal.idMeal}`} >
                 <img src={meal.strMealThumb} alt='' />
+
+                </Link>
                 <div className='dish-receipe'>
                   <h1>
                     <Link to={`/receipe/${meal.idMeal}`}>{meal.strMeal}</Link>
