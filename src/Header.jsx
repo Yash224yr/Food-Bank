@@ -12,7 +12,7 @@ function Header() {
   const [random, setRandom] = useState('');
   const [check, setCheck] = useState(false);
   const [menu, setMenu] = useState(true)
-  const {search , setSearch} = useContext(mealcontext)
+  const { search, setSearch } = useContext(mealcontext)
 
 
   const [isMenuActive, setIsMenuActive] = useState(false);
@@ -46,7 +46,9 @@ function Header() {
   return (
     <header className="header" id="header">
       <nav className="navbar container">
-        <img src={logo} alt="" className='brand' />
+        <Link to="/" >
+          <img src={logo} alt="" className='brand' />
+        </Link>
         <div className="search">
           <form className="search-form">
             <input
@@ -54,7 +56,7 @@ function Header() {
               name="search"
               className="search-input"
               value={search}
-              onChange={(e)=>{setSearch(e.target.value)}}
+              onChange={(e) => { setSearch(e.target.value) }}
               placeholder="Search for Meal"
               autoFocus
             />
