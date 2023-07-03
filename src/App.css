@@ -901,6 +901,8 @@ button.cta a {
   align-items: center;
   justify-content: center;
   height: 350px;
+  margin-bottom: 5rem;
+
 }
 
 
@@ -912,8 +914,8 @@ button.cta a {
 }
 
 .recipe-ingredients .image img {
-  height: 100%;
-  width: 90%;
+  height: calc(300px + 8vw);
+  width: calc(300px + 10vw);
 }
 
 .recipe-ingredients .detail {
@@ -1296,6 +1298,7 @@ button.cta a {
     flex-direction: column;
     justify-content: start;
     height: auto;
+    margin-bottom: 0.5rem;
   }
 
   .recipe-ingredients .image {
