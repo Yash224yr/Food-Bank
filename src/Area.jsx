@@ -77,10 +77,10 @@ function Area() {
           </option>
           {area
             ? area.map((meal, index) => (
-                <option key={index} value={meal.strArea}>
-                  {meal.strArea}
-                </option>
-              ))
+              <option key={index} value={meal.strArea}>
+                {meal.strArea}
+              </option>
+            ))
             : ''}
         </select>
         <button onClick={() => submithandler()}>
@@ -93,17 +93,21 @@ function Area() {
 
       {loading ? (
         <div className="loader">
-        <div className="circle"></div>
-        <div className="circle"></div>
-        <div className="circle"></div>
-        <div className="circle"></div>
-      </div>
+          <div className="circle"></div>
+          <div className="circle"></div>
+          <div className="circle"></div>
+          <div className="circle"></div>
+        </div>
       ) : (
         <div className='dish-list'>
           {arealist.map((meal, index) => {
             return (
               <div className='dish-key' key={index}>
-                <img src={meal.strMealThumb} alt='' />
+                <Link to={`/receipe/${meal.idMeal}`} >
+
+                  <img src={meal.strMealThumb} alt='' />
+
+                </Link>
                 <div className='dish-receipe'>
                   <h1>
                     <Link to={`/receipe/${meal.idMeal}`}>{meal.strMeal}</Link>

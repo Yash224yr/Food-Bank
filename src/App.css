@@ -796,6 +796,10 @@ button.cta a {
   right: 0;
 }
 
+.recipe-instruction li {
+  margin-bottom: 10px !important;
+}
+
 @keyframes spin988 {
   0% {
     transform: scale(1) rotate(0);

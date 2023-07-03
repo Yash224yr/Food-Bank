@@ -60,7 +60,10 @@ function GetList() {
         <div className='dish-list'>
           {list.slice(0, visibleItems).map((meal, index) => (
             <div className='dish-key' key={index}>
+              <Link  to={`/receipe/${meal.idMeal}`}  >
               <img src={meal.strMealThumb} alt='' />
+
+              </Link>
               <div className='dish-receipe'>
                 <h1>
                   <Link to={`/receipe/${meal.idMeal}`}>{meal.strMeal}</Link>
