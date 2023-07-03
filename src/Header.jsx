@@ -50,7 +50,7 @@ function Header() {
           <img src={logo} alt="" className='brand' />
         </Link>
         <div className="search">
-          <form className="search-form">
+          <form className="search-form" onSubmit={}>
             <input
               type="text"
               name="search"

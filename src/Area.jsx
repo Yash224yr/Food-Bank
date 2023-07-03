@@ -39,20 +39,27 @@ function Area() {
     return quotes[randomIndex];
   }
 
-  function submithandler() {
-    setLoading(true); // Start loading
 
+  useEffect(()=>{
+   getData()
+    
+  },[list])
+
+  function getData(){
+    setLoading(true); // Start loading
     axios
-      .get(`https://www.themealdb.com/api/json/v1/1/filter.php?a=${list}`)
-      .then((result) => {
-        setArealist(result.data.meals);
-        setLoading(false); // Stop loading
-      })
-      .catch((err) => {
-        console.log(err);
-        setLoading(false); // Stop loading in case of an error
-      });
+    .get(`https://www.themealdb.com/api/json/v1/1/filter.php?a=${list}`)
+    .then((result) => {
+      setArealist(result.data.meals);
+      setLoading(false); // Stop loading
+    })
+    .catch((err) => {
+      console.log(err);
+      setLoading(false); // Stop loading in case of an error
+    });
   }
+  
+
 
   function submitchange(e) {
     setList(e.target.value);
@@ -83,9 +90,6 @@ function Area() {
             ))
             : ''}
         </select>
-        <button onClick={() => submithandler()}>
-          <SearchIcon />
-        </button>
       </div>
       <div className='random-quote'>
         <p>" {randomQuote} "</p>
@@ -100,13 +104,11 @@ function Area() {
         </div>
       ) : (
         <div className='dish-list'>
-          {arealist.map((meal, index) => {
+          {   arealist && arealist.map((meal, index) => {
             return (
               <div className='dish-key' key={index}>
                 <Link to={`/receipe/${meal.idMeal}`} >
-
                   <img src={meal.strMealThumb} alt='' />
-
                 </Link>
                 <div className='dish-receipe'>
                   <h1>
